@@ -594,12 +594,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Successful Negotiation: Master Your Negotiating Skills</a></h3>
                                         <div class="course-info__price">
                                             <span class="sale-price">$39.<small class="separator">00</small></span>
                                         </div>
@@ -622,12 +622,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Time Management Mastery: Do More, Stress Less</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Time Management Mastery: Do More, Stress Less</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="sale-price">$29.<small class="separator">99</small></span>
@@ -651,12 +651,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Angular – The Complete Guide (2020 Edition)</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Angular – The Complete Guide (2020 Edition)</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="sale-price">$49.<small class="separator">99</small></span>
@@ -680,7 +680,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -688,7 +688,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Consulting Approach to Problem Solving</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Consulting Approach to Problem Solving</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -712,7 +712,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-5.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-5.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -720,7 +720,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Business Intelligence Analyst Course 2020</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Business Intelligence Analyst Course 2020</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -736,7 +736,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -744,7 +744,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -768,12 +768,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Mechanical Engineering and Electrical Engineering Explained</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Mechanical Engineering and Electrical Engineering Explained</a></h3>
                                     
                                         <div class="course-info__price">
                                             <span class="sale-price">$84.<small class="separator">00</small></span>
@@ -797,12 +797,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Learn Algebra The Easy Way! Student Engagement</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Learn Algebra The Easy Way! Student Engagement</a></h3>
                                     
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">00</small></span>
@@ -826,12 +826,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Essential Digital Tools for Student Engagement</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Essential Digital Tools for Student Engagement</a></h3>
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
                                         </div>
@@ -854,12 +854,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-10.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-10.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Adobe Lightroom For Beginners : Complete Photo/Image Editing</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Lightroom For Beginners : Complete Photo/Image Editing</a></h3>
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
                                         </div>
@@ -888,7 +888,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-11.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-11.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -897,7 +897,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Mastering Data Modeling Fundamentals</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Mastering Data Modeling Fundamentals</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$46.<small class="separator">00</small></span>
@@ -922,7 +922,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-12.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-12.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="onsale">-51%</span>
@@ -930,7 +930,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Fundamentals of Accounting Student Engagement</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Fundamentals of Accounting Student Engagement</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$15.<small class="separator">00</small></span>
@@ -955,12 +955,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Successful Negotiation: Master Your Negotiating Skills</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="sale-price">$39.<small class="separator">00</small></span>
@@ -984,12 +984,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Time Management Mastery: Do More, Stress Less</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Time Management Mastery: Do More, Stress Less</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="sale-price">$29.<small class="separator">00</small></span>
@@ -1005,7 +1005,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1014,7 +1014,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Adobe Illustrator CC – Essentials Training Course0</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Illustrator CC – Essentials Training Course0</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1038,7 +1038,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1046,7 +1046,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Consulting Approach to Problem Solving</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Consulting Approach to Problem Solving</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1070,12 +1070,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Angular – The Complete Guide (2020 Edition)</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Angular – The Complete Guide (2020 Edition)</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="sale-price">$84.<small class="separator">00</small></span>
@@ -1091,7 +1091,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-5.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-5.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1099,7 +1099,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Business Intelligence Analyst Course 2020</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Business Intelligence Analyst Course 2020</a></h3>
                                         
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1123,7 +1123,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1131,7 +1131,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1155,12 +1155,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Mechanical Engineering and Electrical Engineering Explained</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Mechanical Engineering and Electrical Engineering Explained</a></h3>
                                     
                                         <div class="course-info__price">
                                             <span class="sale-price">$84.<small class="separator">00</small></span>
@@ -1182,7 +1182,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1191,7 +1191,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Adobe Illustrator CC – Essentials Training Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Illustrator CC – Essentials Training Course</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1215,7 +1215,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1223,7 +1223,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Consulting Approach to Problem Solving</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Consulting Approach to Problem Solving</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1247,7 +1247,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-14.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-14.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1255,7 +1255,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Time Management for Professional Productivity</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Time Management for Professional Productivity</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1279,7 +1279,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1287,7 +1287,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Essential Digital Tools for Student Engagement</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Essential Digital Tools for Student Engagement</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1311,7 +1311,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1319,7 +1319,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Business Intelligence Analyst Course 2020</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Business Intelligence Analyst Course 2020</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1335,7 +1335,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-15.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-15.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1343,7 +1343,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
                                         <a href="#" class="course-info__instructor">Donald Logan</a>
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1367,7 +1367,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-16.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-16.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1375,7 +1375,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Introduction to Web Development</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Introduction to Web Development</a></h3>
                                     
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1391,7 +1391,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-17.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-17.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="onsale">-100%</span>
@@ -1399,7 +1399,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Analytic Techniques for Business Specialization</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Analytic Techniques for Business Specialization</a></h3>
                                     
                                         <div class="course-info__price">
                                             <span class="sale-price">$00.<small class="separator">00</small></span>
@@ -1416,12 +1416,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-18.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-18.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">How To Sing #1: Complete Vocal Warm ups & Voice Physiology</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">How To Sing #1: Complete Vocal Warm ups & Voice Physiology</a></h3>
                                         <a href="#" class="course-info__instructor">Emilee Logan</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$19.<small class="separator">99</small></span>
@@ -1437,7 +1437,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1445,7 +1445,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1475,7 +1475,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-19.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-19.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1483,7 +1483,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Complete 2020 Web Development Bootcamp</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Complete 2020 Web Development Bootcamp</a></h3>
                                         <a href="#" class="course-info__instructor">Donald Logan</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">00</small></span>
@@ -1499,12 +1499,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-20.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-20.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Sales Training: Practical Sales Techniques</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Sales Training: Practical Sales Techniques</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$36.<small class="separator">00</small></span>
@@ -1520,7 +1520,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-21.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-21.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1528,7 +1528,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Business Intelligence Analyst Course 2020</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Business Intelligence Analyst Course 2020</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$39.<small class="separator">99</small></span>
@@ -1544,7 +1544,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-22.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-22.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1552,7 +1552,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Complete Graphic Design Theory for Beginners Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Complete Graphic Design Theory for Beginners Course</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">99</small></span>
@@ -1568,7 +1568,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-23.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-23.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1576,7 +1576,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Graphic Design Bootcamp: Photoshop, Illustrator, InDesign</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Graphic Design Bootcamp: Photoshop, Illustrator, InDesign</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$29.<small class="separator">00</small></span>
@@ -1592,7 +1592,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-33.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-33.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1601,7 +1601,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Adobe Illustrator CC – Essentials Training Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Illustrator CC – Essentials Training Course</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1625,7 +1625,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-24.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-24.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1634,7 +1634,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Public Relations: Media Crisis Communications</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Public Relations: Media Crisis Communications</a></h3>
                                         <a href="#" class="course-info__instructor">Emilee Logan</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">00</small></span>
@@ -1651,7 +1651,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1659,7 +1659,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Learn Big Data: The Hadoop Ecosystem Masterclass</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Learn Big Data: The Hadoop Ecosystem Masterclass</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$21.<small class="separator">00</small></span>
@@ -1675,7 +1675,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-26.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-26.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1684,7 +1684,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Mastering Data Modeling Fundamentals</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Mastering Data Modeling Fundamentals</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$46.<small class="separator">00</small></span>
@@ -1709,7 +1709,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-27.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-27.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1717,7 +1717,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Communication Skills Machine: Master Persuasion</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Communication Skills Machine: Master Persuasion</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$35.<small class="separator">00</small></span>
@@ -1747,7 +1747,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-22.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-22.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1755,7 +1755,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Complete Graphic Design Theory for Beginners Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Complete Graphic Design Theory for Beginners Course</a></h3>
                                         <a href="#" class="course-info__instructor">Donald Logan</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">00</small></span>
@@ -1771,12 +1771,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">User Experience Design Fundamentals</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">User Experience Design Fundamentals</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$42.<small class="separator">00</small></span>
@@ -1792,7 +1792,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-23.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-23.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1800,7 +1800,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Graphic Design Bootcamp: Photoshop, Illustrator, InDesign</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Graphic Design Bootcamp: Photoshop, Illustrator, InDesign</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$29.<small class="separator">99</small></span>
@@ -1816,7 +1816,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-28.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-28.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="free">Free</span>
@@ -1824,7 +1824,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Ultimate Photoshop Training: From Beginner to Pro</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Ultimate Photoshop Training: From Beginner to Pro</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1840,12 +1840,12 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-29.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-29.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Illustrator 2020 MasterClass</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Illustrator 2020 MasterClass</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$22.<small class="separator">00</small></span>
@@ -1861,7 +1861,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-13.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1870,7 +1870,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Adobe Illustrator CC – Essentials Training Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Illustrator CC – Essentials Training Course</a></h3>
                             
                                         <div class="course-info__price">
                                             <span class="free">Free</span>
@@ -1894,7 +1894,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-30.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-30.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="onsale">-50%</span>
@@ -1902,7 +1902,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-intermediate">Intermediate</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">The Complete UX & Web Design Master Course</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">The Complete UX & Web Design Master Course</a></h3>
                                         <a href="#" class="course-info__instructor">Emilee Logan</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$45.<small class="separator">00</small></span>
@@ -1919,7 +1919,7 @@
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-31.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail"><img src="assets/images/courses/courses-31.jpg" alt="courses" width="258" height="173"></a>
                                         </div>
                                         <div class="course-header__badge">
                                             <span class="hot">Featured</span>
@@ -1927,7 +1927,7 @@
                                     </div>
                                     <div class="course-info">
                                         <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="course-single-layout-01.html">Fundamentals of Graphic Design Bootcamp</a></h3>
+                                        <h3 class="course-info__title"><a href="/course_detail">Fundamentals of Graphic Design Bootcamp</a></h3>
                                         <a href="#" class="course-info__instructor">Owen Christ</a>
                                         <div class="course-info__price">
                                             <span class="sale-price">$39.<small class="separator">00</small></span>

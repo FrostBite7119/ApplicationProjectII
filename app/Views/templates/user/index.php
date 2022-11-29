@@ -63,7 +63,7 @@
 
                             <!-- Header Search Start -->
                             <div class="header-serach">
-                                <form action="#">
+                                <form action="/search">
                                     <input type="text" class="header-serach__input" placeholder="Search...">
                                     <button class="header-serach__btn"><i class="fas fa-search"></i></button>
                                 </form>
@@ -183,6 +183,13 @@
 
         </div>
         <!-- Header End -->
+
+        <!-- Offcanvas Start -->
+        <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu" style="background-image: url(assets/images/mobile-bg.jpg);">
+            
+
+        </div>
+        <!-- Offcanvas End -->
 
         <?= $this->renderSection('content'); ?>
 
