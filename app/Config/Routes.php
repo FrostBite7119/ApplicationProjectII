@@ -35,10 +35,26 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// routes user
 $routes->get('/', 'Home::index');
 $routes->get('/home', 'Home::home');
 $routes->get('/course_detail', 'Home::courseDetail');
 $routes->get('/search', 'Home::search');
+
+// routes admin
+$routes->get('/admin/login', 'Login::index');
+$routes->post('/admin/login/process', 'Login::process');
+$routes->get('/admin/login/logout', 'Login::logout');
+$routes->get('/admin', 'Admin::index');
+
+// routes admin modul
+$routes->get('/admin/modul', 'Admin::modul');
+$routes->get('/admin/modul/addmodul', 'Admin::addmodul');
+$routes->post('/admin/modul/insertmodul', 'Admin::insertModul');
+$routes->post('/admin/modul/delete/(:any)', 'Admin::deleteModul/$1');
+$routes->get('/admin/modul/editdata/(:any)', 'Admin::editdata/$1');
+$routes->post('/admin/modul/updatemodul/(:any)', 'Admin::updateModul/$1');
 
 /*
  * --------------------------------------------------------------------
