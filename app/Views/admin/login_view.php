@@ -24,7 +24,7 @@
     <div class="card-body">
       <p class="login-box-msg">Login untuk melanjutkan</p>
 
-      <?php if(session()->getFlashData('error')): ?>
+      <?php if(session()->getFlashData('errorLogin')): ?>
       <p style="color: red"><?= session()->getFlashData('error'); ?></p>
       <?php endif; ?>
 

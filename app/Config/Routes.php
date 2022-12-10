@@ -38,6 +38,7 @@ $routes->set404Override();
 
 // routes user
 $routes->get('/', 'Home::index');
+$routes->get('/main', 'Home::index');
 $routes->get('/home', 'Home::home');
 $routes->get('/course_detail', 'Home::courseDetail');
 $routes->get('/search', 'Home::search');
@@ -55,6 +56,10 @@ $routes->post('/admin/modul/insertmodul', 'Admin::insertModul');
 $routes->post('/admin/modul/delete/(:any)', 'Admin::deleteModul/$1');
 $routes->get('/admin/modul/editdata/(:any)', 'Admin::editdata/$1');
 $routes->post('/admin/modul/updatemodul/(:any)', 'Admin::updateModul/$1');
+
+//routet user
+$routes->post('/register', 'Register::process');
+$routes->post('/login', 'Login::process');
 
 /*
  * --------------------------------------------------------------------

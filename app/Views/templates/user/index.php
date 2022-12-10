@@ -149,7 +149,7 @@
                             <!-- Header User Button Start -->
                             <div class="header-user d-none d-lg-flex">
                                 <div class="header-user__button">
-                                    <button class="header-user__login" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</button>
+                                    <button class="header-user__login" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</button>
                                 </div>
                                 <div class="header-user__button">
                                     <button class="header-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar</button>
@@ -239,26 +239,35 @@
         <!-- Log In Modal Start -->
         <div class="modal fade" id="loginModal">
             <div class="modal-dialog modal-dialog-centered modal-login">
-    
+
                 <!-- Modal Wrapper Start -->
                 <div class="modal-wrapper">
-                    <button class="modal-close" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
-    
+                    <button class="modal-close" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>    
                     <!-- Modal Content Start -->
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Login</h5>
-                            <p class="modal-description">Belum punya akun? <button data-bs-toggle="modal" data-bs-target="#registerModal"> Daftar sekarang</button></p>
+                            <p class="modal-description">Belum punya akun? <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal"> Daftar sekarang</button></p>
                         </div>
                         <div class="modal-body">
-                            <form action="#">
+                            <?php if(session()->getFlashData('info')): ?>
+                            <div class="alert alert-primary" role="alert">
+                                <?= session()->getFlashData('info'); ?>
+                            </div>
+                            <?php endif; ?>
+                            <?php if(session()->getFlashData('errorLogin')): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?= session()->getFlashData('errorLogin'); ?>
+                            </div>
+                            <?php endif; ?>
+                            <form action="/login" method="post">
                                 <div class="modal-form">
                                     <label class="form-label">Email</label>
-                                    <input type="text" class="form-control" placeholder="Your username or email">
+                                    <input type="text" class="form-control" placeholder="Your username or email" name="email">
                                 </div>
                                 <div class="modal-form">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" class="form-control" placeholder="Password" name="password">
                                 </div>
                                 <div class="modal-form">
                                     <button class="btn btn-primary btn-hover-secondary w-100">Log In</button>
@@ -284,61 +293,62 @@
                 <button class="modal-close" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
 
                 <!-- Modal Content Start -->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Daftar</h5>
-                        <p class="modal-description">Sudah punya akun? <button data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p>
-                    </div>
-                    <div class="modal-body">
-
-                        <form action="#">
+                <form action="/register" method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Daftar</h5>
+                            <p class="modal-description">Sudah punya akun? <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal">Log in</button></p>
+                        </div>
+                        <div class="modal-body">
+                            <?php if(session()->getFlashData('error')) : ?>
+                                <?= session()->getFlashData('error'); ?>
+                            <?php endif; ?>
                             <div class="row gy-5">
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Nama</label>
-                                        <input type="text" class="form-control" placeholder="Nama">
+                                        <input type="text" class="form-control" placeholder="Nama" name="nama" value="<?= old('nama'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Nomor Telepon</label>
-                                        <input type="number" class="form-control" placeholder="Nomor Telepon">
+                                        <input type="number" class="form-control" placeholder="Nomor Telepon" name="nomor-telepon" value="<?= old('nomor-telepon'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Email</label>
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <input type="text" class="form-control" placeholder="Email" name="email" value="<?= old('email'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Alamat</label>
-                                        <input type="text" class="form-control" placeholder="Alamat">
+                                        <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="<?= old('alamat'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Password</label>
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" class="form-control" placeholder="Password" name="password" value="<?= old('password'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="modal-form">
                                         <label class="form-label">Masukkan Kembali Password</label>
-                                        <input type="password" class="form-control" placeholder="Masukkan Kembali Password">
+                                        <input type="password" class="form-control" placeholder="Masukkan Kembali Password" id="password_conf" name="password_conf" value="<?= old('password_conf'); ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="modal-form">
-                                        <button class="btn btn-primary btn-hover-secondary w-100">Daftar</button>
+                                        <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Daftar</button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
-
+                        </div>
                     </div>
-                </div>
+                <form action="/register" method="post">
                 <!-- Modal Content End -->
 
             </div>
@@ -375,6 +385,24 @@
     <!-- Activation JS -->
     <script src="assets/js/main.js"></script>
 
+    <script>
+        <?php if(session()->getFlashData('error')) : ?>
+        $(document).ready(function(){
+             $("#registerModal").modal('show');
+         });
+        <?php endif; ?>
+
+        <?php if(session()->getFlashData('info')) : ?>
+        $(document).ready(function(){
+             $("#loginModal").modal('show');
+         });
+        <?php endif; ?>
+        <?php if(session()->getFlashData('errorLogin')) : ?>
+        $(document).ready(function(){
+             $("#loginModal").modal('show');
+         });
+        <?php endif; ?>
+    </script>
 
 </body>
 
