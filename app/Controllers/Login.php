@@ -17,24 +17,28 @@ class Login extends BaseController
     public function process(){
         $userModel = new UserModel();
 
-        $email = $this->request->getVar('email');
+        $email = $this->request->getPost('email');
         $dataUser = $userModel->find($email);
 
         if($dataUser){
             $password = $this->request->getPost('password');
-            if($password == $dataUser['password']){
+            if(password_verify($password, $dataUser['password'])){
                 session()->set([
                     'email' => $dataUser['email'],
                     'nama' => $dataUser['nama'],
                     'role' => $dataUser['role']
                 ]);
 
-                return redirect()->to('admin');
+                if($dataUser['role'] == "admin"){
+                    return redirect()->to('admin');
+                }else{
+                    return redirect()->to(base_url());
+                }
             }
         }
 
-        session()->setFlashData('error', 'Email atau Password Salah');
-        return redirect()->back();
+        session()->setFlashData('errorLogin', 'Email atau Password Salah');
+        return redirect()->to(base_url());
     }
 
     public function logout(){
