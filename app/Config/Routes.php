@@ -46,7 +46,7 @@ $routes->get('/search', 'Home::search');
 
 // routes admin
 $routes->get('/admin/login', 'Login::index');
-$routes->post('/admin/login/process', 'Login::process');
+$routes->post('/admin/login/process', 'Login::processAdmin');
 $routes->get('/admin/login/logout', 'Login::logout');
 $routes->get('/admin', 'Admin::index');
 

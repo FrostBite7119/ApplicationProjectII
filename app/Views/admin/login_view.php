@@ -25,7 +25,7 @@
       <p class="login-box-msg">Login untuk melanjutkan</p>
 
       <?php if(session()->getFlashData('errorLogin')): ?>
-      <p style="color: red"><?= session()->getFlashData('error'); ?></p>
+      <p style="color: red"><?= session()->getFlashData('errorLogin'); ?></p>
       <?php endif; ?>
 
       <form action="/admin/login/process" method="post">
