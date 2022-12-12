@@ -6,13 +6,13 @@ use App\Models\UserModel;
 
 class Login extends BaseController
 {
-    public function index(){
-        if(session()->get('role') == 'admin'){
-            return redirect()->to('admin');
-        }
+    // public function index(){
+    //     if(session()->get('role') == 'admin'){
+    //         return redirect()->to('admin');
+    //     }
 
-        return view('admin/login_view');
-    }
+    //     return view('admin/login_view');
+    // }
 
     public function process(){
         $userModel = new UserModel();
@@ -30,7 +30,9 @@ class Login extends BaseController
                 ]);
 
                 if($dataUser['role'] == "admin"){
-                    return redirect()->to('admin');
+                    return redirect()->to(base_url('admin'));
+                }else if($dataUser['role'] == "user"){
+                    return redirect()->to(base_url('user'));
                 }else{
                     return redirect()->to(base_url());
                 }

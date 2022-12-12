@@ -263,14 +263,14 @@
                             <form action="/login" method="post">
                                 <div class="modal-form">
                                     <label class="form-label">Email</label>
-                                    <input type="text" class="form-control" placeholder="Your username or email" name="email">
+                                    <input type="text" class="form-control" placeholder="Your username or email" name="email" value="<?= old('email'); ?>">
                                 </div>
                                 <div class="modal-form">
                                     <label class="form-label">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="password">
+                                    <input type="password" class="form-control" placeholder="Password" name="password" value="<?= old('password'); ?>">
                                 </div>
                                 <div class="modal-form">
-                                    <button class="btn btn-primary btn-hover-secondary w-100">Log In</button>
+                                    <button type="submit" class="btn btn-primary btn-hover-secondary w-100">Log In</button>
                                 </div>
                             </form>
                         </div>

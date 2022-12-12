@@ -40,6 +40,7 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/main', 'Home::index');
 $routes->get('/home', 'Home::home');
+$routes->get('/user', 'User::index');
 $routes->get('/course_detail', 'Home::courseDetail');
 $routes->get('/search', 'Home::search');
 
