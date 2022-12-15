@@ -58,6 +58,14 @@ $routes->post('/admin/modul/delete/(:any)', 'Admin::deleteModul/$1');
 $routes->get('/admin/modul/editdata/(:any)', 'Admin::editdata/$1');
 $routes->post('/admin/modul/updatemodul/(:any)', 'Admin::updateModul/$1');
 
+// routes admin langganan
+$routes->get('/admin/langganan', 'Admin::langganan');
+$routes->get('/admin/langganan/addlangganan', 'Admin::addlangganan');
+$routes->post('/admin/langganan/insertlangganan', 'Admin::insertlangganan');
+$routes->post('/admin/langganan/delete/(:any)', 'Admin::deletelangganan/$1');
+$routes->get('/admin/langganan/editlangganan/(:any)', 'Admin::editlangganan/$1');
+$routes->post('/admin/langganan/updatelangganan/(:any)', 'Admin::updatelangganan/$1');
+
 //routet user
 $routes->post('/register', 'Register::process');
 $routes->post('/login', 'Login::process');
