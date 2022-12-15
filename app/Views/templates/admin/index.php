@@ -26,6 +26,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminlte/plugins/summernote/summernote-bs4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/dist/css/adminlte.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/adminlte/plugins/daterangepicker/daterangepicker.css">
+  <script src="/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="/adminlte/plugins/moment/moment.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -94,6 +98,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/langganan" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "langganan"){echo "active"; }?>">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p>
+                Langganan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/login/logout" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
@@ -139,7 +151,61 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="/adminlte/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="/adminlte/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="/adminlte/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<!-- date-range-picker -->
+<script src="/adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+
 <!-- Page specific script -->
+<script>
+  //Date range picker
+
+  <?php if(isset($dataLangganan)): ?>
+    <?php if($dataLangganan['waktu_diskon'] != null) : ?>
+      <?php $tgl = explode(' - ', $dataLangganan['waktu_diskon']); ?>
+      
+      let startDate = moment('<?= $tgl[0]; ?>', 'DD/MM/YYYY');
+      let endDate = moment('<?= $tgl[1]; ?>', 'DD/MM/YYYY');
+
+      // Initialize the date range picker with the start date
+      $('#reservation').daterangepicker({
+        startDate: startDate,
+        endDate: endDate,
+        locale: {
+          format: 'DD/MM/YYYY'
+        }
+      });
+    <?php else: ?>
+      $('#reservation').daterangepicker({
+        locale: {
+          format: 'DD/MM/YYYY'
+        }
+      });
+    <?php endif; ?>
+  <?php else: ?>
+    $('#reservation').daterangepicker({
+      locale: {
+        format: 'DD/MM/YYYY'
+      }
+    });
+  <?php endif; ?>
+
+  let inputDiskon = document.getElementById('inputDiskon');
+
+  if(document.getElementById('inputDiskon').value.length == 0 || document.getElementById('inputDiskon').value == 0){
+    document.getElementById('wadahRentangWaktu').style.display = 'none';
+  }
+  
+  inputDiskon.addEventListener('input', function(){
+    const jumlahKarakter = document.getElementById('inputDiskon').value.length;
+    const nilaiDiskon = document.getElementById('inputDiskon').value;
+    if(jumlahKarakter > 0 || nilaiDiskon != 0){
+      document.getElementById('wadahRentangWaktu').style.display = 'block';
+    }else{
+      document.getElementById('wadahRentangWaktu').style.display = 'none';
+    }
+  });
+</script>
+
 <script>
   $(function () {
     $("#example1").DataTable({
@@ -147,6 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     }).container().appendTo('#example1_wrapper .col-md-6:eq(0)');
   });
 </script>
+
 <!-- BS-Stepper -->
 <script src="/adminlte/plugins/bs-stepper/js/bs-stepper.min.js"></script>
 
