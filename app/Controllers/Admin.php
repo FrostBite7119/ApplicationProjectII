@@ -559,7 +559,7 @@ class Admin extends BaseController
             'waktu_diskon' => $waktuDiskon
         ]);
 
-        if($result == true){
+        if($result !== false){
             return redirect()->to('admin/langganan')->with('info', 'Berhasil menambahkan data');
         }else{
             return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
@@ -611,7 +611,7 @@ class Admin extends BaseController
             'waktu_diskon' => $waktuDiskon
         ]);
 
-        if($result == true){
+        if($result !== false){
             return redirect()->to('admin/langganan')->with('info', 'Berhasil mengupdate data');
         }else{
             return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
