@@ -40,10 +40,10 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/main', 'Home::index');
 $routes->get('/home', 'Home::home');
-$routes->get('/user', 'User::index');
+$routes->get('/user', 'Home::index');
 $routes->get('/course_detail/(:any)', 'Home::courseDetail/$1');
 $routes->get('/search', 'Home::search');
-$routes->get('/membership', 'Membership::index');
+$routes->get('/membership', 'Home::membership');
 
 
 // routes admin

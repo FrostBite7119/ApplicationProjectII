@@ -148,18 +148,18 @@
 
                             <!-- Header User Button Start -->
                             <div class="header-user d-none d-lg-flex">
-                                <?php if(!isset($_SESSION['email'])){?>
+                                <?php if(!session()->get('role') && session()->get('role') != "admin"): ?>
                                 <div class="header-user__button">
                                     <button class="header-user__login" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</button>
                                 </div>
                                 <div class="header-user__button">
                                     <button class="header-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar</button>
                                 </div>
-                                <?php  }else { ?>
+                                <?php  else :  ?>
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn">
                                         <div class="account-profile__avatar">
-                                        <img src="assets/images/user.png" onclick="toggleMenu()">
+                                        <img src="/assets/images/user.png" onclick="toggleMenu()">
                                             
                                         </div>
                                             
@@ -192,7 +192,7 @@
                                         <!-- Header Mini Cart End -->
 
                                     </div>
-                                <?php  } ?>
+                                <?php  endif; ?>
                             </div>
                             <!-- Header User Button End -->
 

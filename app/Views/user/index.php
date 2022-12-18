@@ -237,23 +237,6 @@
                                 <li><a href="zoom-meetings-single.html"><span>Zoom Meeting Single</span></a></li>
                             </ul>
                         </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </ul>
                 </nav>
             </div>
@@ -405,7 +388,7 @@
                                 </div>
                                 <div class="counter-item-02__content">
                                     <span class="counter-item-02__count count" data-count="253085">0</span>
-                                    <p class="counter-item-02__text">Jumlah Pelanggan</p>
+                                    <p class="counter-item-02__text">Jumlah Pengguna</p>
                                 </div>
                             </div>
                             <!-- Counter Item End -->
@@ -545,7 +528,7 @@
                 <div class="instructor-action__content text-center" data-aos="fade-up" data-aos-duration="1000">
                     <h3 class="instructor-action__main-title">Tunggu apa lagi? Bergabunglah sekarang</h3>
                     <h4 class="instructor-action__sub-title">Dan jadilah persona yang unggul.</h4>
-                    <a class="instructor-action__btn btn btn-primary btn-hover-secondary" href="#">Langganan Sekarang</a>
+                    <a class="instructor-action__btn btn btn-primary btn-hover-secondary" href="<?= base_url('/membership') ?>">Langganan Sekarang</a>
                 </div>
 
             </div>
