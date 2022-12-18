@@ -588,21 +588,28 @@
                     <div class="tab-pane fade show active" id="tab1">
 
                         <div class="row row-cols-xl-5 g-6">
+                            <?php foreach($modul as $dataModul) : ?> 
                             <div class="col-xl col-lg-3 col-md-4 col-sm-6">
 
                                 <!-- Course Start -->
                                 <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="258" height="173"></a>
+                                            <a href="/course_detail/<?= $dataModul['id_modul']; ?>"><img src="/cover/<?= $dataModul['cover'] ?>" alt="courses" width="258" height="173"></a>
                                         </div>
                                     </div>
                                     <div class="course-info">
-                                        <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Successful Negotiation: Master Your Negotiating Skills</a></h3>
-                                        <div class="course-info__price">
-                                            <span class="sale-price">$39.<small class="separator">00</small></span>
-                                        </div>
+                                        <?php if($dataModul['level'] == "mudah") :?>
+                                            <span class="course-info__badge-text badge-beginner">Mudah</span>
+                                        <?php elseif($dataModul['level'] == "menengah") : ?>
+                                            <span class="course-info__badge-text badge-intermediate">Menengah</span>
+                                        <?php elseif($dataModul['level'] == "sulit") : ?>
+                                            <span class="course-info__badge-text badge-hard">Sulit</span>
+                                        <?php endif; ?>
+                                        <h3 class="course-info__title"><a href="/course_detail/<?= $dataModul['id_modul']; ?>"><?= $dataModul['judul_modul']; ?></a></h3>
+                                        <?php if($dataModul['kategori'] == "Android") :?>
+                                            <span class="badge rounded-pill bg-success">Android</span>
+                                        <?php endif; ?>
                                         <div class="course-info__rating">
 
                                             <div class="rating-star">
@@ -616,266 +623,7 @@
                                 <!-- Course End -->
 
                             </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Time Management Mastery: Do More, Stress Less</a></h3>
-                            
-                                        <div class="course-info__price">
-                                            <span class="sale-price">$29.<small class="separator">99</small></span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Angular – The Complete Guide (2020 Edition)</a></h3>
-                                        
-                                        <div class="course-info__price">
-                                            <span class="sale-price">$49.<small class="separator">99</small></span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-beginner">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Consulting Approach to Problem Solving</a></h3>
-                                        
-                                        <div class="course-info__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-5.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">The Business Intelligence Analyst Course 2020</a></h3>
-                                        
-                                        <div class="course-info__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-6.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Become a Product Manager | Learn the Skills & Get the Job</a></h3>
-                                        
-                                        <div class="course-info__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-25.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Mechanical Engineering and Electrical Engineering Explained</a></h3>
-                                    
-                                        <div class="course-info__price">
-                                            <span class="sale-price">$84.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Learn Algebra The Easy Way! Student Engagement</a></h3>
-                                    
-                                        <div class="course-info__price">
-                                            <span class="sale-price">$45.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 80%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-all">All Levels</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Essential Digital Tools for Student Engagement</a></h3>
-                                        <div class="course-info__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail ">
-                                            <a href="/course_detail"><img src="assets/images/courses/courses-10.jpg" alt="courses" width="258" height="173"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info">
-                                        <span class="course-info__badge-text badge-beginner">Beginner</span>
-                                        <h3 class="course-info__title"><a href="/course_detail">Adobe Lightroom For Beginners : Complete Photo/Image Editing</a></h3>
-                                        <div class="course-info__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
+                            <?php endforeach; ?>
                         </div>
 
                     </div>

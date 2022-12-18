@@ -27,7 +27,8 @@ class Login extends BaseController
                     session()->set([
                         'email' => $dataUser['email'],
                         'nama' => $dataUser['nama'],
-                        'role' => $dataUser['role']
+                        'role' => $dataUser['role'],
+                        'level' => $dataUser['level']
                     ]);
                     return redirect()->to(base_url('user'));
                 }

@@ -7103,10 +7103,6 @@ span.flatpickr-weekday {
   color: #fff;
   margin-bottom: 10px;
 }
-.course-info__badge-text.badge-all {
-  background: rgba(23, 184, 193, 0.15);
-  color: #17b8c1;
-}
 .course-info__badge-text.badge-beginner {
   background: rgba(0, 113, 220, 0.15);
   color: #0071dc;
@@ -7114,6 +7110,10 @@ span.flatpickr-weekday {
 .course-info__badge-text.badge-intermediate {
   background: rgba(255, 194, 33, 0.15);
   color: #ffb900;
+}
+.course-info__badge-text.badge-hard {
+  background: rgba(224, 16, 16, 0.15);
+  color: #ff1212;
 }
 .course-info__title {
   font-size: 15px;
