@@ -10,6 +10,7 @@ use App\Models\SubModulModel;
 use App\Models\MateriModel;
 use App\Models\UserModel;
 use App\Models\EditorModel;
+use App\Models\LanggananModel;
 
 class Admin extends BaseController
 {
@@ -21,6 +22,7 @@ class Admin extends BaseController
         return view('admin/home');
     }
 
+    // Modul Start
     public function modul(){
         if (session()->get('role') !== 'admin') { // jika bukan admin
             return redirect()->route('admin/login');
@@ -507,6 +509,112 @@ class Admin extends BaseController
             return redirect()->to('admin/modul')->with('info', 'Berhasil mengedit modul');
         }else{
             return redirect()->back()->withInput()->with('errors', $dataError);
+        }
+    }
+    // Modul End
+
+    // Langganan Start
+    public function langganan(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $langgananModel = new LanggananModel();
+
+        $data['title'] = "Paket Langganan";
+        $data['langganan'] = $langgananModel->findAll();
+        return view('admin/list_langganan', $data);
+    }
+
+    public function addlangganan(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $data['title'] = "Tambah Langganan";
+
+        return view('admin/add_langganan', $data);
+    }
+
+    public function insertlangganan(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        
+        $langgananModel = new langgananModel();
+
+        if(!$this->request->getPost('diskon')){
+            $diskon = null;
+            $waktuDiskon = null;
+        }else{
+            $diskon = $this->request->getPost('diskon');
+            $waktuDiskon = $this->request->getPost('rentangDiskon');
+        }
+
+        $result = $langgananModel->insert([
+            'lama' => $this->request->getPost('lama'),
+            'rentang' => $this->request->getPost('rentang'),
+            'biaya_langganan' => $this->request->getPost('biayaLangganan'),
+            'diskon' => $diskon,
+            'waktu_diskon' => $waktuDiskon
+        ]);
+
+        if($result !== false){
+            return redirect()->to('admin/langganan')->with('info', 'Berhasil menambahkan data');
+        }else{
+            return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
+        }
+    }
+
+    public function deletelangganan($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        $langgananModel = new LanggananModel();
+        $langgananModel->delete($id);
+        return redirect()->route('admin/langganan')->with('info', 'Berhasil menghapus data');
+    }
+
+    public function editlangganan($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $langgananModel = new LanggananModel();
+
+        $data['title'] = "Update Langganan";
+        $data['dataLangganan'] = $langgananModel->find($id);
+
+        return view('admin/edit_langganan', $data);
+    }
+
+    public function updatelangganan($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        
+        $langgananModel = new langgananModel();
+
+        if(!$this->request->getPost('diskon')){
+            $diskon = null;
+            $waktuDiskon = null;
+        }else{
+            $diskon = $this->request->getPost('diskon');
+            $waktuDiskon = $this->request->getPost('rentangDiskon');
+        }
+
+        $result = $langgananModel->update($id, [
+            'lama' => $this->request->getPost('lama'),
+            'rentang' => $this->request->getPost('rentang'),
+            'biaya_langganan' => $this->request->getPost('biayaLangganan'),
+            'diskon' => $diskon,
+            'waktu_diskon' => $waktuDiskon
+        ]);
+
+        if($result !== false){
+            return redirect()->to('admin/langganan')->with('info', 'Berhasil mengupdate data');
+        }else{
+            return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
         }
     }
 }
