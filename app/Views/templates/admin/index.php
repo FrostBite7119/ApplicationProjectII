@@ -698,6 +698,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       let newMateri = null;
       <?php $i = 0;  ?>
       <?php $j = 0; ?>
+
       <?php foreach($subModul as $data) :  ?>
         newModul = document.createElement('div');
         newModul.classList.add('card');
@@ -735,55 +736,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <?php if(isset($materi)) : ?>
           <?php foreach($materi as $dataMateri) : ?>
-            newMateri = document.createElement('div');
-            newMateri.classList.add('card');
-            newMateri.classList.add('card-default');
-            newMateri.style.marginTop='20px';
+            <?php if($dataMateri['id_sub_modul'] == $data['id_sub_modul']): ?>
+              newMateri = document.createElement('div');
+              newMateri.classList.add('card');
+              newMateri.classList.add('card-default');
+              newMateri.style.marginTop='20px';
 
-            newMateri.innerHTML = `
-            <div class="card-header">
-              <h3 class="card-title">Input Materi</h3>
-              <div class="card-tools">
-                <a type="button" class="btn btn-tool" onclick="materi.moveUp(this.parentNode.parentNode.parentNode)">
-                  <i class="fas fa-arrow-up"></i>
-                </a>
-                <a type="button" class="btn btn-tool" onclick="materi.moveDown(this.parentNode.parentNode.parentNode)">
-                  <i class="fas fa-arrow-down"></i>
-                </a>
-                <a type="button" class="btn btn-tool" data-card-widget="collapse">
-                  <i class="fas fa-minus"></i>
-                </a>
-                <a type="button" class="btn btn-tool" data-card-widget="remove" onclick="this.parentNode.parentNode.parentNode.remove()">
-                  <i class="fas fa-times"></i>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label>Judul Materi</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Judul Materi" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][judulMateri]" value="<?= $dataMateri['judul_materi']; ?>">
-                  </div>
-                  <div class="form-group">
-                    <label>Isi Materi</label>
-                    <textarea class="summernote" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][isiMateri]"><?= $dataMateri['isi_materi']; ?></textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Visibilitas Untuk</label>
-                    <select class="form-control select2" style="width: 100%;" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][visibilitas]">
-                      <option value="1" <?php if($dataMateri['level'] == 1){echo "selected"; }?>>Guest</option>
-                      <option value="2" <?php if($dataMateri['level'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
-                      <option value="3" <?php if($dataMateri['level'] == 3){echo "selected"; }?>>User Berlangganan</option>
-                    </select>
-                  </div>
+              newMateri.innerHTML = `
+              <div class="card-header">
+                <h3 class="card-title">Input Materi</h3>
+                <div class="card-tools">
+                  <a type="button" class="btn btn-tool" onclick="materi.moveUp(this.parentNode.parentNode.parentNode)">
+                    <i class="fas fa-arrow-up"></i>
+                  </a>
+                  <a type="button" class="btn btn-tool" onclick="materi.moveDown(this.parentNode.parentNode.parentNode)">
+                    <i class="fas fa-arrow-down"></i>
+                  </a>
+                  <a type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </a>
+                  <a type="button" class="btn btn-tool" data-card-widget="remove" onclick="this.parentNode.parentNode.parentNode.remove()">
+                    <i class="fas fa-times"></i>
+                  </a>
                 </div>
               </div>
-            </div>`;
-
-          newModul.querySelector('.wadah-materi').insertBefore(newMateri, newModul.querySelector('.tambahMateri'));
-          materi.inputMateri++;
-          <?php $j++; ?>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Judul Materi</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Masukkan Judul Materi" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][judulMateri]" value="<?= $dataMateri['judul_materi']; ?>">
+                    </div>
+                    <div class="form-group">
+                      <label>Isi Materi</label>
+                      <textarea class="summernote" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][isiMateri]"><?= $dataMateri['isi_materi']; ?></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">Visibilitas Untuk</label>
+                      <select class="form-control select2" style="width: 100%;" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][visibilitas]">
+                        <option value="1" <?php if($dataMateri['level'] == 1){echo "selected"; }?>>Guest</option>
+                        <option value="2" <?php if($dataMateri['level'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
+                        <option value="3" <?php if($dataMateri['level'] == 3){echo "selected"; }?>>User Berlangganan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+              newModul.querySelector('.wadah-materi').insertBefore(newMateri, newModul.querySelector('.tambahMateri'));
+              materi.inputMateri++;
+              <?php $j++; ?>
+            <?php endif; ?>
           <?php endforeach; ?>  
         <?php endif;?>
 

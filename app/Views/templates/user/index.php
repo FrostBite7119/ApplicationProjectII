@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="/assets/css/plugins/select2.min.css">
 
     <!-- Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 
@@ -54,7 +54,7 @@
 
                         <!-- Header Logo Start -->
                         <div class="header-logo">
-                            <a class="header-logo__logo" href="/"><img src="assets/images/dark-logo.png" width="296" height="64" alt="Logo"></a>
+                            <a class="header-logo__logo" href="/"><img src="/assets/images/dark-logo.png" width="296" height="64" alt="Logo"></a>
                         </div>
                         <!-- Header Logo End -->
 
@@ -74,7 +74,7 @@
                             <div class="header-navigation d-none d-xl-block">
                                 <nav class="menu-primary">
                                     <ul class="menu-primary__container">
-                                        <li><a class="active" href="/home"><span>Beranda</span></a>
+                                        <li><a href="/home"><span>Beranda</span></a>
                                         </li>
                                         <li>
                                             <a href="#"><span>Modul</span></a>
@@ -203,7 +203,7 @@
                         <div class="col-lg-12">
                             <!-- Footer Widget Start -->
                             <div class="footer-widget text-center">
-                                <a href="#" class="footer-widget__logo"><img src="assets/images/dark-logo.png" alt="Logo" width="150" height="32"></a>
+                                <a href="#" class="footer-widget__logo"><img src="/assets/images/dark-logo.png" alt="Logo" width="150" height="32"></a>
                                 <div class="footer-widget__social">
                                     <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
                                     <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -361,29 +361,29 @@
     <!-- JS Vendor, Plugins & Activation Script Files -->
 
     <!-- Vendors JS -->
-    <script src="assets/js/vendor/modernizr-3.11.7.min.js"></script>
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/vendor/modernizr-3.11.7.min.js"></script>
+    <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="/assets/js/vendor/bootstrap.bundle.min.js"></script>
 
     <!-- Plugins JS -->
-    <script src="assets/js/plugins/aos.js"></script>
-    <script src="assets/js/plugins/parallax.js"></script>
-    <script src="assets/js/plugins/swiper-bundle.min.js"></script>
-    <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/plugins/jquery.powertip.min.js"></script>
-    <script src="assets/js/plugins/nice-select.min.js"></script>
-    <script src="assets/js/plugins/glightbox.min.js"></script>
-    <script src="assets/js/plugins/jquery.sticky-kit.min.js"></script>
-    <script src="assets/js/plugins/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/plugins/masonry.pkgd.min.js"></script>
-    <script src="assets/js/plugins/flatpickr.js"></script>
-    <script src="assets/js/plugins/range-slider.js"></script>
-    <script src="assets/js/plugins/select2.min.js"></script>
+    <script src="/assets/js/plugins/aos.js"></script>
+    <script src="/assets/js/plugins/parallax.js"></script>
+    <script src="/assets/js/plugins/swiper-bundle.min.js"></script>
+    <script src="/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="/assets/js/plugins/jquery.powertip.min.js"></script>
+    <script src="/assets/js/plugins/nice-select.min.js"></script>
+    <script src="/assets/js/plugins/glightbox.min.js"></script>
+    <script src="/assets/js/plugins/jquery.sticky-kit.min.js"></script>
+    <script src="/assets/js/plugins/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/plugins/masonry.pkgd.min.js"></script>
+    <script src="/assets/js/plugins/flatpickr.js"></script>
+    <script src="/assets/js/plugins/range-slider.js"></script>
+    <script src="/assets/js/plugins/select2.min.js"></script>
 
 
     <!-- Activation JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
     <script>
         <?php if(session()->getFlashData('error')) : ?>
@@ -405,7 +405,4 @@
     </script>
 
 </body>
-
-
-<!-- Mirrored from htmldemo.net/edumall/edumall/become-an-instructor.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Sep 2022 03:45:36 GMT -->
 </html>

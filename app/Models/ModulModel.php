@@ -10,7 +10,7 @@ class ModulModel extends Model
     protected $primaryKey = 'id_modul';
     protected $returnType = 'array';
     protected $allowedFields = ['id_modul', 'judul_modul', 'level', 'kategori', 'deskripsi','email', 'cover'];
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $useSoftDeletes = true;
     protected $updatedField = 'updated_at';
     protected $deletedField  = 'deleted_at';

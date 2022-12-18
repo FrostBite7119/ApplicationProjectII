@@ -41,7 +41,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/main', 'Home::index');
 $routes->get('/home', 'Home::home');
 $routes->get('/user', 'User::index');
-$routes->get('/course_detail', 'Home::courseDetail');
+$routes->get('/course_detail/(:any)', 'Home::courseDetail/$1');
 $routes->get('/search', 'Home::search');
 
 // routes admin
