@@ -148,12 +148,51 @@
 
                             <!-- Header User Button Start -->
                             <div class="header-user d-none d-lg-flex">
+                                <?php if(!isset($_SESSION['email'])){?>
                                 <div class="header-user__button">
                                     <button class="header-user__login" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</button>
                                 </div>
                                 <div class="header-user__button">
                                     <button class="header-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar</button>
                                 </div>
+                                <?php  }else { ?>
+                                    <div class="header-action">
+                                        <a href="#" class="header-action__btn">
+                                        <div class="account-profile__avatar">
+                                        <img src="assets/images/user.png" onclick="toggleMenu()">
+                                            
+                                        </div>
+                                            
+                                        </a>
+
+                                        <!-- Header Mini Cart Start -->
+                                        <div class="sub-menu-wrap" id="subMenu">
+                                            <!-- Header Mini Cart Product List Start -->
+                                             <div class="sub-menu-p">
+                                                <div class="user-info">
+                                                    <img src="assets/images/user.png">
+                                                    <h3><?php echo $_SESSION['nama']?></h3>
+                                                </div>
+                                                <hr>
+                                                    <a href="#" class="sub-menu-link">
+                                                        <img src="assets/images/profile.png">
+                                                        <p>Profile</p>
+                                                        <span>></span>
+                                                    </a>
+                                                    <a href="/login/logoutUser" class="sub-menu-link">
+                                                        <img src="assets/images/logout.png">
+                                                        <p>Logout</p>
+                                                        <span>></span>
+                                                    </a>
+
+
+                                            </div>
+
+                                        </div>
+                                        <!-- Header Mini Cart End -->
+
+                                    </div>
+                                <?php  } ?>
                             </div>
                             <!-- Header User Button End -->
 
@@ -402,6 +441,13 @@
              $("#loginModal").modal('show');
          });
         <?php endif; ?>
+    </script>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
     </script>
 
 </body>

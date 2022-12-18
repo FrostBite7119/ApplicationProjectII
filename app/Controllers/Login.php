@@ -37,6 +37,10 @@ class Login extends BaseController
         session()->setFlashData('errorLogin', 'Email atau Password Salah');
         return redirect()->to(base_url());
     }
+    public function logoutUser(){
+        session()->destroy();
+        return redirect()->to(base_url());
+    }
 
     public function processAdmin(){
         $userModel = new UserModel();

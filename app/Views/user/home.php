@@ -14,7 +14,7 @@
 
                                 <!-- Slider Caption Start -->
                                 <div class="slider-caption">
-                                    <h3 class="slider-caption__sub-title">Start to success</h3>
+                                    <h3 class="slider-caption__sub-title"><?php echo $_SESSION['email']?></h3>
                                     <h2 class="slider-caption__main-title">Berlangganan untuk mempelajari berbagai modul pembelajaran</h2>
                                     <p>Upgrade diri Anda menjadi lebih baik.</p>
                                 </div>

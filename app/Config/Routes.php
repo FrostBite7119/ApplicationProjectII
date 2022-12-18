@@ -43,6 +43,8 @@ $routes->get('/home', 'Home::home');
 $routes->get('/user', 'User::index');
 $routes->get('/course_detail', 'Home::courseDetail');
 $routes->get('/search', 'Home::search');
+$routes->get('/membership', 'Membership::index');
+
 
 // routes admin
 $routes->get('/admin/login', 'Login::index');
@@ -61,6 +63,8 @@ $routes->post('/admin/modul/updatemodul/(:any)', 'Admin::updateModul/$1');
 //routet user
 $routes->post('/register', 'Register::process');
 $routes->post('/login', 'Login::process');
+$routes->get('/login/logoutUser', 'Login::logoutUser');
+
 
 /*
  * --------------------------------------------------------------------

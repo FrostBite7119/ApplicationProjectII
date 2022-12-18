@@ -1,6 +1,7 @@
 <?= $this->extend('templates/user/index'); ?>
 
 <?= $this->section('content'); ?>
+
         <!-- Page Banner Section Start -->
         <div class="page-banner bg-color-04">
             <div class="page-banner__wrapper scene">
@@ -34,7 +35,7 @@
                                         </div>
                                         <!-- Section Title End -->
 
-                                        <a href="#" class="instructor-banner__btn btn btn-primary btn-hover-secondary">Daftar Sekarang</a>
+                                        <a href="<?= base_url('/membership') ?>" class="instructor-banner__btn btn btn-primary btn-hover-secondary">Langganan Sekarang</a>
                                     </div>
                                     <!-- Instructor Banner End -->
                                 </div>
@@ -544,7 +545,7 @@
                 <div class="instructor-action__content text-center" data-aos="fade-up" data-aos-duration="1000">
                     <h3 class="instructor-action__main-title">Tunggu apa lagi? Bergabunglah sekarang</h3>
                     <h4 class="instructor-action__sub-title">Dan jadilah persona yang unggul.</h4>
-                    <a class="instructor-action__btn btn btn-primary btn-hover-secondary" href="#">Daftar Sekarang</a>
+                    <a class="instructor-action__btn btn btn-primary btn-hover-secondary" href="#">Langganan Sekarang</a>
                 </div>
 
             </div>
