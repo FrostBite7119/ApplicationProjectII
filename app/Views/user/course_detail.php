@@ -305,7 +305,7 @@
                                             <div class="value"><?= ucfirst($modul['level']) ?></div>
                                         </li>
                                         <li>
-                                            <div class="label"><i class="far fa-book-open"></i> Lectures </div>
+                                            <div class="label"><i class="far fa-book-open"></i> Sub Modul </div>
                                             <div class="value"><?= $totalSub; ?></div>
                                         </li>
                                         <li>

@@ -7,6 +7,7 @@ use App\Models\SubModulModel;
 use App\Models\TargetModel;
 use App\Models\SyaratModel;
 use App\Models\DisarankanModel;
+use App\Models\LanggananModel;
 
 class Home extends BaseController
 {
@@ -45,5 +46,17 @@ class Home extends BaseController
 
     public function search(){
         return view('user/search');
+    }
+
+    public function membership(){
+        // if (session()->get('role') !== 'user') { // jika bukan admin
+        //     return redirect()->to(base_url());
+        // }
+        $langgananModel = new LanggananModel();
+
+        $data['langganan'] = $langgananModel->orderBy("CASE rentang WHEN 'Hari' THEN 1 ELSE 2 END")->orderBy('rentang', 'asc')->orderBy('lama', 'asc')->findAll();
+        
+
+        return view('user/membership', $data);
     }
 }
