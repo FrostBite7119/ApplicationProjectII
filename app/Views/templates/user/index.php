@@ -34,6 +34,16 @@
     <link rel="stylesheet" href="/assets/css/plugins/flatpickr.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/ion.rangeSlider.min.css">
     <link rel="stylesheet" href="/assets/css/plugins/select2.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
@@ -159,7 +169,7 @@
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn">
                                         <div class="account-profile__avatar">
-                                        <img src="/assets/images/user.png" onclick="toggleMenu()">
+                                        <img src="assets/images/avatar-placeholder.jpg" onclick="toggleMenu()">
                                             
                                         </div>
                                             
@@ -170,20 +180,28 @@
                                             <!-- Header Mini Cart Product List Start -->
                                              <div class="sub-menu-p">
                                                 <div class="user-info">
-                                                    <img src="assets/images/user.png">
+                                                    <img src="assets/images/avatar-placeholder.jpg">
                                                     <h3><?php echo $_SESSION['nama']?></h3>
                                                 </div>
                                                 <hr>
-                                                    <a href="#" class="sub-menu-link">
-                                                        <img src="assets/images/profile.png">
-                                                        <p>Profile</p>
-                                                        <span>></span>
-                                                    </a>
-                                                    <a href="/login/logoutUser" class="sub-menu-link">
-                                                        <img src="assets/images/logout.png">
-                                                        <p>Logout</p>
-                                                        <span>></span>
-                                                    </a>
+                                                <li class="sub-item">
+                                                <span class="material-icons-outlined"> grid_view </span>
+                                                <p>Dashboard</p>
+                                                </li>
+                                                <li class="sub-item">
+                                                <span class="material-icons-outlined">
+                                                    format_list_bulleted
+                                                </span>
+                                                <p>My Orders</p>
+                                                </li>
+                                                <a href="/profile" class="sub-item">
+                                                <span class="material-icons-outlined"> manage_accounts </span>
+                                                <p>Update Profile</p>
+                                                </li>
+                                                <a href="/login/logoutUser" class="sub-item">
+                                                <span class="material-icons-outlined"> logout </span>
+                                                <p>Logout</p>
+                                                </a>
 
 
                                             </div>
