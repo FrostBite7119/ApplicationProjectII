@@ -20379,6 +20379,7 @@ span.flatpickr-weekday {
   background: #fff;
   padding: 20px;
   margin: 10px;
+  border-radius: 0.625rem;
 }
 .user-info{
   display: flex;
@@ -20411,32 +20412,82 @@ span.flatpickr-weekday {
   background: #ccc;
   margin: 15px 0 10px;
 }
-.sub-menu-link{
+
+li {
+  list-style-type: none;
+  position: relative;
+  padding: 0.625rem 0 0.5rem;
+}
+li ul {
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  align-items: flex-start;
+  transition: all 0.5s ease;
+  width: 20rem;
+  right: -3rem;
+  top: 4.5rem;
+  border-radius: 0.325rem;
+  gap: 0;
+  padding: 1rem 0rem;
+  opacity: 0;
+  box-shadow: 0px 0px 100px rgba(20, 18, 18, 0.25);
+  display: none;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+}
+
+.material-icons-outlined {
+  color: #888888;
+  transition: all 0.3s ease-out;
+}
+
+.material-icons-outlined:hover {
+  color: #ff9800;
+  transform: scale(1.25) translateY(-4px);
+  cursor: pointer;
+}
+
+
+.profile {
+  height: 3rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.sub-item {
+  width: 100%;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: #525252;
-  margin: 12px 0;
+  gap: 0.725rem;
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
 }
-.sub-menu-link p{
-  width: 100%;
-  margin-top: 14px;
+
+.sub-item:hover {
+  background-color: rgba(232, 232, 232, 0.4);
 }
-.sub-menu-link img{
-  width: 40px;
-  background: #e5e5e5;
-  border-radius: 50%;
-  padding: 8px;
-  margin-left: 15px;
-  margin-right: 15px;
+
+.sub-item:hover .material-icons-outlined {
+  color: #0071dc;
+  transform: scale(1.08) translateY(-2px);
+  cursor: pointer;
 }
-.sub-menu-link span{
-  font-size: 10px;
-  transition: transfrom 0.5s;
+
+.sub-item:hover p {
+  color: #000;
+  cursor: pointer;
 }
-.sub-menu-link:hover span{
-  transform: translateX(5px);
-}
-.sub-menu-link:hover p{
-  font-weight: 600;
+
+.sub-item p {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 500;
+  margin: 0.4rem 0;
+  flex: 1;
 }

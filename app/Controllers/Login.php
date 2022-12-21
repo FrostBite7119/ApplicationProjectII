@@ -30,7 +30,7 @@ class Login extends BaseController
                         'role' => $dataUser['role'],
                         'level' => $dataUser['level']
                     ]);
-                    return redirect()->to(base_url(''));
+                    return redirect()->to(base_url('user'));
                 }
             }
         }
