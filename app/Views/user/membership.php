@@ -62,7 +62,7 @@
                                             </ul>
                                         </div>
                                         <div class="pricing-plan__footer">
-                                            <a class="pricing-plan__btn btn btn-primary btn-hover-secondary" href="#">Berlangganan</a>
+                                            <a class="pricing-plan__btn btn btn-primary btn-hover-secondary" href="/langganan_pembayaran">Berlangganan</a>
                                         </div>
                                     </div>
                                     <!-- Membership plans Tabs End -->

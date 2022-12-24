@@ -162,7 +162,7 @@
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn">
                                             <div class="account-profile__avatar">
-                                                <img src="/assets/images/user.png" onclick="toggleMenu()">
+                                                <img src="/assets/images/user.png">
                                             </div>
                                         </a>
                                         <!-- Header Mini Cart Start -->

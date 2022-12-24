@@ -13108,8 +13108,8 @@ span.flatpickr-weekday {
   }
 }
 .page-banner__caption {
-  padding-top: 30px;
-  padding-bottom: 72px;
+  padding-top: 72px;
+  padding-bottom: 50px;
 }
 .page-banner__caption-02 {
   padding-top: 12px;
@@ -17762,7 +17762,7 @@ span.flatpickr-weekday {
   border: 1px solid #ededed;
   border-radius: 5px;
   padding: 31px 30px 30px;
-  margin-left: 30px;
+  margin-bottom: 30px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-width: 767px) {
   .checkout-order {
@@ -20364,12 +20364,12 @@ span.flatpickr-weekday {
   margin-top: 0;
 }
 .sub-menu-wrap{
+  display: block;
   position: absolute;
   top: 100%;
   right: 10%;
   width: 320px;
   max-height: 0px;
-  overflow: hidden;
   transition: max-height 0.5s;
 }
 .sub-menu-wrap.open-menu{
@@ -20490,4 +20490,31 @@ ul li ul:hover {
   font-weight: 500;
   margin: 0.4rem 0;
   flex: 1;
+}
+
+.btn-terapkan{
+  width: 30%;
+  margin-left: 20px;
+  padding-right: 100px;
+  padding-left: 40px;
+  border-radius: 5px;
+}
+.btn-checkout-langganan{
+  width: 30%;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 80px;
+  padding-left: 40px;
+  border-radius: 5px;
+}
+
+.text-line-through {
+  text-decoration: line-through;
+  text-decoration-line: line-through;
+  text-decoration-thickness: initial;
+  text-decoration-style: initial;
+}
+
+.text-total{
+  margin-bottom: 15px;
 }
