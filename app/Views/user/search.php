@@ -245,558 +245,119 @@
                 <!-- Filter Collapse Start -->
                 <div class="filter-collapse collapse" id="collapseFilter">
                     <div class="card card-body">
-                        <div class="row row-cols-xl-5 gy-6">
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Sort by</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio1" checked name="sort-by">
-                                                    <label for="radio1">Latest</label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio2" name="sort-by">
-                                                    <label for="radio2">Oldest</label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio3" name="sort-by">
-                                                    <label for="radio3">Course Title (a-z)</label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio4" name="sort-by">
-                                                    <label for="radio4">Course Title (z-a)</label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
+                        <form action="/search" method="get">
+                            <input type="hidden" id="cariData" name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari']; }?>">                        
+                            <div class="row row-cols-xl-5 gy-6">
+                                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6">
+                                    <!-- Widget Filter Start -->
+                                    <div class="widget-filter">
+                                        <h4 class="widget-filter__title">Kategori</h4>
+                                        <select class="form-select" aria-label="Default select example" name="kategori">
+                                            <option selected value="">Pilih Kategori</option>
+                                            <option value="Android">Android</option>
+                                            <option value="Pemrograman Dasar">Pemrograman Dasar</option>
+                                            <option value="Web">Web</option>
+                                        </select>                                 
                                     </div>
-                                    <!-- Widget Filter Wrapper End -->
+                                    <!-- Widget Filter End -->
                                 </div>
-                                <!-- Widget Filter End -->
+                                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6">
+                                    <!-- Widget Filter Start -->
+                                    <div class="widget-filter">
+                                        <h4 class="widget-filter__title">Rating</h4>
 
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Categories</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories1" name="sort-by">
-                                                    <label for="categories1">Art & Design <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories2" name="sort-by">
-                                                    <label for="categories2">Business <span>(12)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories3" name="sort-by">
-                                                    <label for="categories3">Data Science <span>(7)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories4" name="sort-by">
-                                                    <label for="categories4">Development <span>(10)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories5" name="sort-by">
-                                                    <label for="categories5">Finance <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories6" name="sort-by">
-                                                    <label for="categories6">Health & Fitness <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories7" name="sort-by">
-                                                    <label for="categories7">Lifestyle <span>(9)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories8" name="sort-by">
-                                                    <label for="categories8">Marketing <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories9" name="sort-by">
-                                                    <label for="categories9">Music <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories10" name="sort-by">
-                                                    <label for="categories10">Personal Development <span>(9)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories11" name="sort-by">
-                                                    <label for="categories11">Photography <span>(7)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="categories12" name="sort-by">
-                                                    <label for="categories12">Teaching & Academics <span>(7)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
+                                        <!-- Widget Filter Wrapper Start -->
+                                        <div class="widget-filter__wrapper widgetScroll">
+                                            <ul class="widget-filter__list">
+                                                <li>
+                                                    <!-- Widget Filter Item Start -->
+                                                    <div class="widget-filter__item">
+                                                        <input type="radio" id="rating1" name="sort-by" value="5">
+                                                        <label for="rating1">
+                                                            <span class="star-line">
+                                                            <span class="star" style="width: 100%;"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- Widget Filter Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Widget Filter Item Start -->
+                                                    <div class="widget-filter__item">
+                                                        <input type="radio" id="rating2" name="sort-by" value="4">
+                                                        <label for="rating2">
+                                                            <span class="star-line">
+                                                                <span class="star" style="width: 80%;"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- Widget Filter Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Widget Filter Item Start -->
+                                                    <div class="widget-filter__item">
+                                                        <input type="radio" id="rating3" name="sort-by" value="3">
+                                                        <label for="rating3">
+                                                            <span class="star-line">
+                                                                <span class="star" style="width: 60%;"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- Widget Filter Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Widget Filter Item Start -->
+                                                    <div class="widget-filter__item">
+                                                        <input type="radio" id="rating4" name="sort-by" value="2">
+                                                        <label for="rating4">
+                                                            <span class="star-line">
+                                                                <span class="star" style="width: 40%;"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- Widget Filter Item End -->
+                                                </li>
+                                                <li>
+                                                    <!-- Widget Filter Item Start -->
+                                                    <div class="widget-filter__item">
+                                                        <input type="radio" id="rating5" name="sort-by" value="1">
+                                                        <label for="rating5">
+                                                            <span class="star-line">
+                                                                <span class="star" style="width: 20%;"></span>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+                                                    <!-- Widget Filter Item End -->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- Widget Filter Wrapper End -->
                                     </div>
-                                    <!-- Widget Filter Wrapper End -->
+                                    <!-- Widget Filter End -->
+
                                 </div>
-                                <!-- Widget Filter End -->
+                                <div class="col-xl-4 col-lg-3 col-md-4 col-sm-6">
 
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Instructor</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor1" name="sort-by">
-                                                    <label for="instructor1">Donald Logan <span>(11)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor2" name="sort-by">
-                                                    <label for="instructor2">Emilee Logan <span>(12)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor3" name="sort-by">
-                                                    <label for="instructor3">Nahla Jones <span>(9)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor4" name="sort-by">
-                                                    <label for="instructor4">Oliver Porter <span>(9)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor5" name="sort-by">
-                                                    <label for="instructor5">Foley Patrik <span>(9)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor6" name="sort-by">
-                                                    <label for="instructor6">Tomi Hensley <span>(5)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor7" name="sort-by">
-                                                    <label for="instructor7">Alex Itzel <span>(5)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="instructor8" name="sort-by">
-                                                    <label for="instructor8">parra <span>(6)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
+                                    <!-- Widget Filter Start -->
+                                    <div class="widget-filter">
+                                        <h4 class="widget-filter__title">Tingkat Kesulitan</h4>
+                                        <select class="form-select" aria-label="Default select example" name="level">
+                                            <option selected value="">Pilih Tingkat Kesulitan</option>
+                                            <option value="mudah">Mudah</option>
+                                            <option value="menengah">Menengah</option>
+                                            <option value="sulit">Sulit</option>
+                                        </select>                                 
                                     </div>
-                                    <!-- Widget Filter Wrapper End -->
+                                    <!-- Widget Filter End -->
+
                                 </div>
-                                <!-- Widget Filter End -->
+                                <div class="col-xl-12 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-end">
 
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
+                                    <button type="submit" class="header-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Filter</button>
 
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Price</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio5" checked name="price">
-                                                    <label for="radio5">All <span>(101)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio6" name="price">
-                                                    <label for="radio6">Free <span>(6)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="radio" id="radio7" name="price">
-                                                    <label for="radio7">Paid <span>(95)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Widget Filter Wrapper End -->
                                 </div>
-                                <!-- Widget Filter End -->
-
                             </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Rating</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="rating1" name="sort-by">
-                                                    <label for="rating1">
-                                                        <span class="star-line">
-                                                        <span class="star" style="width: 100%;"></span>
-                                                        </span>
-
-                                                        <span>(07)</span>
-                                                    </label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="rating2" name="sort-by">
-                                                    <label for="rating2">
-                                                        <span class="star-line">
-                                                        <span class="star" style="width: 80%;"></span>
-                                                        </span>
-
-                                                        <span>(0)</span>
-                                                    </label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="rating3" name="sort-by">
-                                                    <label for="rating3">
-                                                        <span class="star-line">
-                                                        <span class="star" style="width: 60%;"></span>
-                                                        </span>
-
-                                                        <span>(0)</span>
-                                                    </label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="rating4" name="sort-by">
-                                                    <label for="rating4">
-                                                        <span class="star-line">
-                                                        <span class="star" style="width: 40%;"></span>
-                                                        </span>
-
-                                                        <span>(0)</span>
-                                                    </label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="rating5" name="sort-by">
-                                                    <label for="rating5">
-                                                        <span class="star-line">
-                                                        <span class="star" style="width: 20%;"></span>
-                                                        </span>
-
-                                                        <span>(0)</span>
-                                                    </label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Widget Filter Wrapper End -->
-                                </div>
-                                <!-- Widget Filter End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Language</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language1" name="sort-by">
-                                                    <label for="language1">English <span>(21)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language2" name="sort-by">
-                                                    <label for="language2">French <span>(7)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language3" name="sort-by">
-                                                    <label for="language3">German <span>(5)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language4" name="sort-by">
-                                                    <label for="language4">Italian <span>(6)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language5" name="sort-by">
-                                                    <label for="language5">Finance <span>(8)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language6" name="sort-by">
-                                                    <label for="language6">Japanese <span>(1)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language7" name="sort-by">
-                                                    <label for="language7">Korean <span>(5)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language8" name="sort-by">
-                                                    <label for="language8">Russian <span>(6)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="language9" name="sort-by">
-                                                    <label for="language9">Spanish <span>(5)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Widget Filter Wrapper End -->
-                                </div>
-                                <!-- Widget Filter End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Level</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="level1" name="sort-by">
-                                                    <label for="level1">All Levels <span>(50)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="level2" name="sort-by">
-                                                    <label for="level2">Beginner <span>(32)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="level3" name="sort-by">
-                                                    <label for="level3">Intermediate <span>(17)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="level4" name="sort-by">
-                                                    <label for="level4">Expert <span>(2)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Widget Filter Wrapper End -->
-                                </div>
-                                <!-- Widget Filter End -->
-
-                            </div>
-                            <div class="col-xl col-lg-3 col-md-4 col-sm-6">
-
-                                <!-- Widget Filter Start -->
-                                <div class="widget-filter">
-                                    <h4 class="widget-filter__title">Filter by duration</h4>
-
-                                    <!-- Widget Filter Wrapper Start -->
-                                    <div class="widget-filter__wrapper widgetScroll">
-                                        <ul class="widget-filter__list">
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="duration1" name="sort-by">
-                                                    <label for="duration1">Less than 2 hours <span>(57)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="duration2" name="sort-by">
-                                                    <label for="duration2">3 - 6 hours <span>(7)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="duration3" name="sort-by">
-                                                    <label for="duration3">7 - 16 hours <span>(10)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                            <li>
-                                                <!-- Widget Filter Item Start -->
-                                                <div class="widget-filter__item">
-                                                    <input type="checkbox" id="duration4" name="sort-by">
-                                                    <label for="duration4">17+ Hours <span>(27)</span></label>
-                                                </div>
-                                                <!-- Widget Filter Item End -->
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- Widget Filter Wrapper End -->
-                                </div>
-                                <!-- Widget Filter End -->
-
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 <!-- Filter Collapse End -->
@@ -805,30 +366,31 @@
                     <div class="tab-pane fade show active" id="grid">
 
                         <div class="row gy-6">
+                            <?php foreach($modul as $dataModul): ?>
                             <div class="col-xl-3 col-lg-4 col-sm-6">
-
                                 <!-- Course Start -->
                                 <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
+                                            <a href="course-single-layout-01.html"><img src="/cover/<?= $dataModul['cover'] ?>" alt="courses" width="330" height="221"></a>
                                         </div>
                                     </div>
                                     <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Communications</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Negotiation is a skill well worth mastering – by putting …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
+                                        <?php if($dataModul['level'] == "mudah") :?>
+                                            <span class="course-info__badge-text badge-beginner">Mudah</span>
+                                        <?php elseif($dataModul['level'] == "menengah") : ?>
+                                            <span class="course-info__badge-text badge-intermediate">Menengah</span>
+                                        <?php elseif($dataModul['level'] == "sulit") : ?>
+                                            <span class="course-info__badge-text badge-hard">Sulit</span>
+                                        <?php endif; ?>                                    
+                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html"><?= $dataModul['judul_modul'] ?></a></h3>
+                                        <?php if($dataModul['kategori'] == "Android") :?>
+                                            <span class="badge rounded-pill bg-success">Android</span>
+                                        <?php elseif($dataModul['kategori'] == "Web") : ?>
+                                            <span class="badge rounded-pill bg-info">Web</span>
+                                        <?php elseif($dataModul['kategori'] == "Pemrograman Dasar") : ?>
+                                            <span class="badge rounded-pill bg-warning">Pemrograman Dasar</span>
+                                        <?php endif; ?>
                                         <div class="course-info-02__rating">
 
                                             <div class="rating-star">
@@ -840,538 +402,9 @@
                                     </div>
                                 </div>
                                 <!-- Course End -->
-
                             </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-2.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Productivity</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Time Management Mastery: Do More, Stress Less</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>If you’re someone who has a LOT on their plate …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$39.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Programming Languages</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Angular – The Complete Guide (2020 Edition)</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>From Setup to Deployment, this course covers it all! You’ll learn all …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$39.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-4.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Management</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Consulting Approach to Problem Solving</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Do you feel that you already know all possible frameworks of business …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-8.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Strategy & Analytics</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">The Business Intelligence Analyst Course 2022</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Our program is different than the rest of the materials …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-1.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Communications</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Negotiation is a skill well worth mastering – by putting …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-3.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Productivity</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Time Management Mastery: Do More, Stress Less</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Do you feel that you already know all possible frameworks of business …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$39.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-7.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Programming Languages</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Angular – The Complete Guide (2020 Edition)</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>From Setup to Deployment, this course covers it all! You’ll learn all …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$39.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-9.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Teacher Training</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Essential Digital Tools for Student Engagement</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Engaging and motivating students are always very challenging task faced …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-10.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Photography Tools</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Adobe Lightroom For Beginners : Complete Photo/Image Editing</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Adobe Lightroom is designed for photographers. It provides you the …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-11.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Photography Fundamentals</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">The Ultimate Photography Course – Beginner to Advanced</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Do you feel that you already know all possible frameworks of business …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$55.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-12.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Programming Languages</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Internationally Accredited Diploma in Weight Loss</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>If you’re struggling to lose weight or stick to a …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$9.<small class="separator">99</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-32.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Photography Fundamentals</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Photography Masterclass: A Complete Guide to Photography</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>This online photography course will teach you how to take …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$49.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-33.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                        <div class="course-header__badge">
-                                            <span class="free">Free</span>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-beginner">Beginner</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Productivity</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Boost Your Productivity: Adapt, Improve, Do!</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Listening Skills are the quiet soft skills sauce that can …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="free">Free</span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-34.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Leadership</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Succeed, Influence and Inspire as a Woman in Leadership</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Most importantly your body language has a tremendous impact on …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$75.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-sm-6">
-
-                                <!-- Course Start -->
-                                <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
-                                    <div class="course-header">
-                                        <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="assets/images/courses/courses-35.jpg" alt="courses" width="330" height="221"></a>
-                                        </div>
-                                    </div>
-                                    <div class="course-info-02">
-                                        <span class="course-info-02__badge-text badge-all">All Levels</span>
-                                        <div class="course-info-02__category">
-                                            <a href="#">Career Development</a>
-                                        </div>
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html">Building Influence at Work</a></h3>
-                                        <div class="course-info-02__description">
-                                            <p>Listening Skills are the quiet soft skills sauce that can …</p>
-                                        </div>
-                                        <div class="course-info-02__price">
-                                            <span class="sale-price">$42.<small class="separator">00</small></span>
-                                        </div>
-                                        <div class="course-info-02__rating">
-
-                                            <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
-                                            </div>
-
-                                            <span>(2)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Course End -->
-
-                            </div>
+                            <?php endforeach; ?>                                                  
                         </div>
-
                     </div>
                     <div class="tab-pane fade" id="list">
 
@@ -1691,107 +724,7 @@
 
                     </div>
                 </div>
-
-                <!-- Page Pagination Start -->
-                <div class="page-pagination">
-                    <ul class="pagination justify-content-center">
-                        <li><a class="active" href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">...</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#"><i class="far fa-angle-double-right"></i></a></li>
-                    </ul>
-                </div>
-                <!-- Page Pagination End -->
-
             </div>
         </div>
         <!-- Courses End -->
-
-        <!-- Courses Hover End -->
-        <div id="course-hover">
-            <div class="course-item-hover">
-                <div class="course-item-hover__category">
-                    <a href="#">Communications</a>
-                </div>
-                <h2 class="course-item-hover__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h2>
-                <div class="course-item-hover__rating">
-
-                    <div class="rating-star">
-                        <div class="rating-label" style="width: 100%;"></div>
-                    </div>
-
-                    <div class="rating-average">
-                        <span class="rating-average__average">5.0</span>
-                        <span class="rating-average__total">/5</span>
-                    </div>
-
-                    <p class="course-item-hover__rating-count">(2 ratings)</p>
-                </div>
-                <div class="course-item-hover__meta">
-                    <span>5 Lessons</span>
-                    <span>2.3 hours</span>
-                    <span>All Levels</span>
-                </div>
-                <div class="course-item-hover__benefits">
-                    <h6 class="course-item-hover__benefits-title">What you'll learn</h6>
-                    <ul class="course-item-hover__benefits-list">
-                        <li>Negotiate effectively and fairly to make 1000s more than they would otherwise</li>
-                        <li>Be confident in starting and finishing a negotiation</li>
-                        <li>Use smart tactics to increase their bargaining power</li>
-                        <li>Develop mental and emotional strength to keep pushing until they get a great price</li>
-                        <li>Use negotiating skills in both personal and professional situations</li>
-                    </ul>
-                </div>
-                <div class="course-item-hover__btn">
-                    <a class="btn btn-primary btn-hover-secondary w-100" href="#">Add to cart</a>
-                    <a class="btn-link" href="#"><i class="far fa-heart"></i> Add to wishlist</a>
-                </div>
-            </div>
-        </div>
-        <!-- Courses Hover End -->
-
-        <!-- Courses List Hover End -->
-        <div id="course-list-hover">
-            <div class="course-item-hover">
-                <div class="course-item-hover__category">
-                    <a href="#">Communications</a>
-                </div>
-                <h2 class="course-item-hover__title"><a href="course-single-layout-01.html">Successful Negotiation: Master Your Negotiating Skills</a></h2>
-                <div class="course-item-hover__rating">
-
-                    <div class="rating-star">
-                        <div class="rating-label" style="width: 100%;"></div>
-                    </div>
-
-                    <div class="rating-average">
-                        <span class="rating-average__average">5.0</span>
-                        <span class="rating-average__total">/5</span>
-                    </div>
-
-                    <p class="course-item-hover__rating-count">(2 ratings)</p>
-                </div>
-                <div class="course-item-hover__meta">
-                    <span>5 Lessons</span>
-                    <span>2.3 hours</span>
-                    <span>All Levels</span>
-                </div>
-                <div class="course-item-hover__benefits">
-                    <h6 class="course-item-hover__benefits-title">What you'll learn</h6>
-                    <ul class="course-item-hover__benefits-list">
-                        <li>Negotiate effectively and fairly to make 1000s more than they would otherwise</li>
-                        <li>Be confident in starting and finishing a negotiation</li>
-                        <li>Use smart tactics to increase their bargaining power</li>
-                        <li>Develop mental and emotional strength to keep pushing until they get a great price</li>
-                        <li>Use negotiating skills in both personal and professional situations</li>
-                    </ul>
-                </div>
-                <div class="course-item-hover__btn">
-                    <a class="btn btn-primary btn-hover-secondary w-100" href="#">Add to cart</a>
-                    <a class="btn-link" href="#"><i class="far fa-heart"></i> Add to wishlist</a>
-                </div>
-            </div>
-        </div>
-        <!-- Courses List Hover End -->
-
 <?= $this->endSection(); ?>

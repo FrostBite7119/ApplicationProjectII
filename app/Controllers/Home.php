@@ -45,7 +45,49 @@ class Home extends BaseController
     }
 
     public function search(){
-        return view('user/search');
+        $modulModel = new ModulModel();
+
+        if($this->request->getGet('kategori') != null || $this->request->getGet('sort-by') || $this->request->getGet('level') != null){
+            $builder = $modulModel->builder();
+                    
+            // $where = "kategori='".$this->request->getGet('kategori')."' AND level='".$this->request->getGet('level')."'";
+            // $data['modul'] = $builder->select('*')->where($where)->get()->getResultArray();
+            $builder->select('*')->like('judul_modul', $this->request->getGet('cari'), 'both');
+
+            if($this->request->getGet('kategori') !== ""){
+                $where = "kategori='".$this->request->getGet('kategori')."'";
+                $builder->where($where);
+            }
+
+            if($this->request->getGet('level') !== ""){
+                $where = "level='".$this->request->getGet('level')."'";
+                $builder->where($where);
+            }
+
+            if($this->request->getGet('sort-by') !== null){
+                if($this->request->getGet('sort-by') == 5){                
+                    $builder->where('(SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) = 5');
+                }else if($this->request->getGet('sort-by') == 4){
+                    $builder->where('(SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) BETWEEN 4 AND 4.99');
+                }else if($this->request->getGet('sort-by') == 3){
+                    $builder->where('(SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) BETWEEN 3 AND 3.99');
+                }else if($this->request->getGet('sort-by') == 2){
+                    $builder->where('(SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) BETWEEN 2 AND 2.99');
+                }else if($this->request->getGet('sort-by') == 1){
+                    $builder->where('(SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) BETWEEN 1 AND 1.99');
+                }
+
+                // SELECT * FROM modul WHERE judul_modul LIKE '%android%' AND kategori = 'Android' AND level = 'mudah' AND (SELECT AVG(RATING) FROM rating WHERE id_modul = modul.id_modul) BETWEEN 3 AND 3.99;
+            }
+
+            $data['modul'] = $builder->get()->getResultArray();
+            
+        }else{
+            $data['modul'] = $modulModel->like('judul_modul', $this->request->getGet('cari'), 'both')->findAll();
+        }
+
+
+        return view('user/search', $data);
     }
 
     public function membership(){

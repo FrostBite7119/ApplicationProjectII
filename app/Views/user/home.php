@@ -609,6 +609,10 @@
                                         <h3 class="course-info__title"><a href="/course_detail/<?= $dataModul['id_modul']; ?>"><?= $dataModul['judul_modul']; ?></a></h3>
                                         <?php if($dataModul['kategori'] == "Android") :?>
                                             <span class="badge rounded-pill bg-success">Android</span>
+                                        <?php elseif($dataModul['kategori'] == "Web") : ?>
+                                            <span class="badge rounded-pill bg-info">Web</span>
+                                        <?php elseif($dataModul['kategori'] == "Pemrograman Dasar") : ?>
+                                            <span class="badge rounded-pill bg-warning">Pemrograman Dasar</span>
                                         <?php endif; ?>
                                         <div class="course-info__rating">
 
