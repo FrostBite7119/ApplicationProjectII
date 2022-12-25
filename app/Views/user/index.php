@@ -42,7 +42,7 @@
                                 <div class="col-lg-6">
                                     <!-- Instructor Banner Image Start -->
                                     <div class="instructor-banner__image" data-aos="fade-up" data-aos-duration="1000">
-                                        <img src="assets/images/become-a-teacher-hero-image.png" alt="Teacher Hero" width="727" height="347">
+                                        <img src="/assets/images/become-a-teacher-hero-image.png" alt="Teacher Hero" width="727" height="347">
                                     </div>
                                     <!-- Instructor Banner Image End -->
                                 </div>
@@ -61,10 +61,10 @@
         <!-- Page Banner Section End -->
 
         <!-- Offcanvas Start -->
-        <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu" style="background-image: url(assets/images/mobile-bg.jpg);">
+        <div class="offcanvas offcanvas-end offcanvas-mobile" id="offcanvasMobileMenu" style="background-image: url(/assets/images/mobile-bg.jpg);">
             <div class="offcanvas-header bg-white">
                 <div class="offcanvas-logo">
-                    <a class="offcanvas-logo__logo" href="#"><img src="assets/images/dark-logo.png" alt="Logo"></a>
+                    <a class="offcanvas-logo__logo" href="#"><img src="/assets/images/dark-logo.png" alt="Logo"></a>
                 </div>
                 <button type="button" class="offcanvas-close" data-bs-dismiss="offcanvas"><i class="fal fa-times"></i></button>
             </div>
@@ -97,7 +97,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-xl-6">
-                                                <div class="menu-content-banner" style="background-image: url(assets/images/home-megamenu-bg.jpg);">
+                                                <div class="menu-content-banner" style="background-image: url(/assets/images/home-megamenu-bg.jpg);">
                                                     <h4 class="menu-content-banner__title">Achieve Your Goals With EduMall</h4>
                                                     <a href="#" class="menu-content-banner__btn btn btn-primary btn-hover-secondary">Purchase now</a>
                                                 </div>
@@ -487,7 +487,7 @@
             <div class="counter-section-02__shape-02" data-depth="0.9"></div>
             <div class="counter-section-02__shape-03" data-depth="-0.6"></div>
             <div class="counter-section-02__shape-04" data-depth="0.6"></div>
-            <img class="counter-section-02__shape-05" data-depth="-0.8" src="assets/images/shape/edumall-shape-01.png" alt="Shape">
+            <img class="counter-section-02__shape-05" data-depth="-0.8" src="/assets/images/shape/edumall-shape-01.png" alt="Shape">
         </div>
         <!-- Counter End -->
 
@@ -509,7 +509,7 @@
                         <div class="col-lg-6">
                             <!-- Instructor Banner Image Start -->
                             <div class="instructor-banner-02__image text-end" data-aos="fade-up" data-aos-duration="1000">
-                                <img src="assets/images/become-an-instructor-help-section-image.png" alt="instructor" width="574" height="303">
+                                <img src="/assets/images/become-an-instructor-help-section-image.png" alt="instructor" width="574" height="303">
                             </div>
                             <!-- Instructor Banner Image End -->
                         </div>

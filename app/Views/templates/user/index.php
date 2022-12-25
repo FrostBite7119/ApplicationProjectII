@@ -73,8 +73,8 @@
 
                             <!-- Header Search Start -->
                             <div class="header-serach">
-                                <form action="/search">
-                                    <input type="text" class="header-serach__input" placeholder="Search...">
+                                <form action="/search" method="get">
+                                    <input type="text" class="header-serach__input" id="kolomSearch" placeholder="Ingin belajar apa hari ini?" name="cari" value="<?php if(isset($_GET['cari'])){echo $_GET['cari']; }?>">
                                     <button class="header-serach__btn"><i class="fas fa-search"></i></button>
                                 </form>
                             </div>
@@ -192,10 +192,7 @@
                                                 <span class="material-icons-outlined"> logout </span>
                                                 <p>Logout</p>
                                                 </a>
-
-
                                             </div>
-
                                         </div>
                                         <!-- Header Mini Cart End -->
                                     </div>
@@ -265,10 +262,6 @@
                                     <a href="https://www.youtube.com/" target="_blank"><i class="fab fa"></i></a>
                                 </div>
                                 <p class="footer-widget__copyright">&copy; 2022 <span> EduMall </span></p>
-                                <ul class="footer-widget__link flex-row gap-8 justify-content-center">
-                                    <li><a href="#">Tentang Kami</a></li>
-                                    <li><a href="#">Kebijakan Privasi</a></li>
-                                </ul>
                             </div>
                             <!-- Footer Widget End -->
                         </div>
@@ -465,5 +458,10 @@
         }
     </script>
 
+    <script>
+        document.getElementById('kolomSearch').addEventListener('input', function(){
+            document.getElementById('cariData').value= document.getElementById('kolomSearch').value;
+        });
+    </script>
 </body>
 </html>
