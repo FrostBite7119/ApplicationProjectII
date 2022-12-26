@@ -160,13 +160,13 @@
                             <div class="header-user d-none d-lg-flex">
                                 <?php if(session()->get('role') && session()->get('role') != "admin"): ?>
                                     <div class="header-action">
-                                        <a href="#" class="header-action__btn">
+                                        <a href="#" class="header-action__btn" >
                                             <div class="account-profile__avatar">
                                                 <img src="/assets/images/user.png">
                                             </div>
                                         </a>
                                         <!-- Header Mini Cart Start -->
-                                        <div class="sub-menu-wrap" id="subMenu">
+                                        <div class="sub-menu-wrap"   id="subMenu" onClick="toggleMenu()">
                                             <!-- Header Mini Cart Product List Start -->
                                              <div class="sub-menu-p">
                                                 <div class="user-info">

@@ -20370,6 +20370,7 @@ span.flatpickr-weekday {
   right: 10%;
   width: 320px;
   max-height: 0px;
+  visibility: hidden;
   transition: max-height 0.5s;
 }
 .sub-menu-wrap.open-menu{
@@ -20517,4 +20518,14 @@ ul li ul:hover {
 
 .text-total{
   margin-bottom: 15px;
+}
+.class-center-tittle{
+  margin-top: 20px;
+}
+.class-center-tittle-top{
+  text-align: center;
+  margin-top: 13px;
+}
+.span.material-symbols-outlined{
+  text-align: center;
 }

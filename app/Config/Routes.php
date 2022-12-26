@@ -75,6 +75,7 @@ $routes->get('/login/logoutUser', 'Login::logoutUser');
 $routes->get('/profile', 'Profile::index');
 $routes->get('/riwayat_langganan', 'RiwayatLangganan::index');
 $routes->get('/langganan_pembayaran', 'LanggananPembayaran::index');
+$routes->get('/course_materi_detail', 'CourseMateriDetail::index');
 $routes->get('/settings_profile', 'SettingProfile::index');
 
 /*

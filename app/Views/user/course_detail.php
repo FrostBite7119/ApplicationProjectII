@@ -316,7 +316,9 @@
                                     </ul>
                                 </div>
                                 <div class="tutor-course-price-preview__btn">
+                                <a href="/course_materi_detail">
                                     <button class="btn btn-primary btn-hover-secondary w-100"> <i class="far fa-plus"></i> Kursus Saya </button>
+                                    </a> 
                                 </div>
                             </div>
                             <!-- Tutor Course Price Preview End -->
