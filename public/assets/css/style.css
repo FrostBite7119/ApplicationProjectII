@@ -2930,6 +2930,10 @@ span.flatpickr-weekday {
   position: relative;
   margin-left: 20px;
 }
+.header-action:hover .sub-menu-wrap{
+  display: block;
+}
+
 @media only screen and (max-width: 767px) {
   .header-action {
     margin-left: 0;
@@ -20364,10 +20368,10 @@ span.flatpickr-weekday {
   margin-top: 0;
 }
 .sub-menu-wrap{
-  display: block;
+  display: none;
   position: absolute;
-  top: 100%;
-  right: 10%;
+  top: 75%;
+  right: -5%;
   width: 320px;
   max-height: 0px;
   /* visibility: hidden; */

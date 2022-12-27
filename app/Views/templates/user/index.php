@@ -162,11 +162,11 @@
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn" >
                                             <div class="account-profile__avatar">
-                                                <img src="/assets/images/user.png">
+                                                <img src="assets/images/avatar-placeholder.jpg">
                                             </div>
                                         </a>
                                         <!-- Header Mini Cart Start -->
-                                        <div class="sub-menu-wrap"   id="subMenu" onClick="toggleMenu()">
+                                        <div class="sub-menu-wrap"   id="subMenu">
                                             <!-- Header Mini Cart Product List Start -->
                                              <div class="sub-menu-p">
                                                 <div class="user-info">
