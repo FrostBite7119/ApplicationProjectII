@@ -143,7 +143,7 @@
                             <img src="assets/images/avatar-placeholder.jpg" alt="Avatar" width="90" height="90">
                         </div>
                         <div class="dashboard-header__user-info">
-                            <h4 class="dashboard-header__user-name"><span class="welcome-text">Howdy,</span> Adeniyi David</h4>
+                            <h4 class="dashboard-header__user-name"><span class="welcome-text">Billah,</span> ersandibillah03@gmail.com</h4>
                             <div class="dashboard-header__user-rating">
                                 <div class="rating-star">
                                     <div class="rating-label" style="width: 100%;"></div>
@@ -182,37 +182,37 @@
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">Nama</div>
                         <div class="dashboard-profile__content">
-                            <p></p>
+                            <p>Billah</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">Email</div>
                         <div class="dashboard-profile__content">
-                            <p>David</p>
+                            <p>ersandibillah03@gmail.com</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">Alamat</div>
                         <div class="dashboard-profile__content">
-                            <p>student</p>
+                            <p>Jl Lesanpuro 3</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">No Telepon</div>
                         <div class="dashboard-profile__content">
-                            <p>student@edumall.com</p>
+                            <p>0987654321</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">Level</div>
                         <div class="dashboard-profile__content">
-                            <p>09038332315</p>
+                            <p>0</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">
                         <div class="dashboard-profile__heading">Role</div>
                         <div class="dashboard-profile__content">
-                            <p>________</p>
+                            <p>User</p>
                         </div>
                     </div>
                     <div class="dashboard-profile__item">

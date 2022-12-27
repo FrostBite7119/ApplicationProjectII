@@ -143,7 +143,7 @@
                             <img src="assets/images/avatar-placeholder.jpg" alt="Avatar" width="90" height="90">
                         </div>
                         <div class="dashboard-header__user-info">
-                            <h4 class="dashboard-header__user-name"><span class="welcome-text">Howdy,</span> Adeniyi David</h4>
+                            <h4 class="dashboard-header__user-name"><span class="welcome-text">Billah,</span> ersandibillah03@gmail.com</h4>
                             <div class="dashboard-header__user-rating">
                                 <div class="rating-star">
                                     <div class="rating-label" style="width: 100%;"></div>

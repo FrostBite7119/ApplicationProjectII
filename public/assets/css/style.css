@@ -20370,7 +20370,7 @@ span.flatpickr-weekday {
   right: 10%;
   width: 320px;
   max-height: 0px;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: max-height 0.5s;
 }
 .sub-menu-wrap.open-menu{
