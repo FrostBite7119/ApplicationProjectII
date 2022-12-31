@@ -133,14 +133,14 @@ class Home extends BaseController
 
             $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy(['m.id_modul'])->paginate(12, 'modul');    
         }else{
-            $builder = new RatingModel();
+            $builder = $modulModel;
 
-            $builder->select("m.*, AVG(rating.rating) as rata, COUNT(rating.rating) as total");
+            // $builder->select("m.*, AVG(rating.rating) as rata, COUNT(rating.rating) as total");
             $builder->select("m.*, AVG(rating.rating) as rata");
             $builder->from('modul m');
             $builder->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
 
-            $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy('id_modul')->paginate(12, 'modul');
+            $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy('m.id_modul')->paginate(12, 'modul');
         }
 
         $data['pager'] = $modulModel->pager;
