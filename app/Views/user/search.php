@@ -220,17 +220,12 @@
                 <div class="archive-filter-bars">
 
                     <div class="archive-filter-bar">
-                        <p>We found <span>101</span> courses available for you</p>
+                        <p>Hasil Pencarian</p>
                     </div>
 
                     <div class="archive-filter-bar">
 
                         <div class="filter-bar-wrapper">
-                            <span>See</span>
-                            <ul class="nav">
-                                <li><button class="active" data-bs-toggle="tab" data-bs-target="#grid"><i class="fas fa-th"></i></button></li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#list"><i class="fas fa-bars"></i></button></li>
-                            </ul>
                             <button class="btn btn-light btn-hover-primary collapsed" data-bs-toggle="collapse" data-bs-target="#collapseFilter">
                                 <i class="fal fa-filter"></i>
                                 Filters
@@ -352,9 +347,7 @@
 
                                 </div>
                                 <div class="col-xl-12 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-end">
-
-                                    <button type="submit" class="header-user__signup btn btn-primary btn-hover-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Filter</button>
-
+                                    <button type="submit" class="header-user__signup btn btn-primary btn-hover-primary">Filter</button>
                                 </div>
                             </div>
                         </form>
@@ -372,7 +365,7 @@
                                 <div class="course-item-02" data-aos="fade-up" data-aos-duration="1000">
                                     <div class="course-header">
                                         <div class="course-header__thumbnail rounded-0">
-                                            <a href="course-single-layout-01.html"><img src="/cover/<?= $dataModul['cover'] ?>" alt="courses" width="330" height="221"></a>
+                                            <a href="/course_detail/<?= $dataModul['id_modul']; ?>"><img src="/cover/<?= $dataModul['cover'] ?>" alt="courses" width="330" height="221"></a>
                                         </div>
                                     </div>
                                     <div class="course-info-02">
@@ -383,7 +376,7 @@
                                         <?php elseif($dataModul['level'] == "sulit") : ?>
                                             <span class="course-info__badge-text badge-hard">Sulit</span>
                                         <?php endif; ?>                                    
-                                        <h3 class="course-info-02__title"><a href="course-single-layout-01.html"><?= $dataModul['judul_modul'] ?></a></h3>
+                                        <h3 class="course-info-02__title"><a href="/course_detail/<?= $dataModul['id_modul']; ?>"><?= $dataModul['judul_modul'] ?></a></h3>
                                         <?php if($dataModul['kategori'] == "Android") :?>
                                             <span class="badge rounded-pill bg-success">Android</span>
                                         <?php elseif($dataModul['kategori'] == "Web") : ?>
@@ -394,16 +387,17 @@
                                         <div class="course-info-02__rating">
 
                                             <div class="rating-star">
-                                                <div class="rating-label" style="width: 100%;"></div>
+                                                <div class="rating-label" style="width: <?= ((double) $dataModul['rata'] / 5) *100 ?>%;"></div>
                                             </div>
 
-                                            <span>(2)</span>
+                                            <span>(<?= (int) $dataModul['total']; ?>)</span>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Course End -->
                             </div>
-                            <?php endforeach; ?>                                                  
+                            <?php endforeach; ?>
+                            <?= $pager->links('modul', 'custom_pagination') ?>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="list">

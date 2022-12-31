@@ -11,6 +11,8 @@ use App\Models\MateriModel;
 use App\Models\UserModel;
 use App\Models\EditorModel;
 use App\Models\LanggananModel;
+use App\Models\HistoryPembelianModel;
+use App\Models\DetailTransaksiModel;
 
 class Admin extends BaseController
 {
@@ -616,5 +618,104 @@ class Admin extends BaseController
         }else{
             return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
         }
+    }
+
+    public function pembayaran(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $historyPembelianModel = new HistoryPembelianModel();
+
+        $data['title'] = "Pembayaran";
+        $data['pembayaran'] = $historyPembelianModel->join('user', 'history_pembelian.email = user.email')->join('langganan', 'history_pembelian.id_langganan = langganan.id_langganan')->where('status', 'Ditinjau')->findAll();
+        return view('admin/list_pembayaran', $data);
+    }
+
+    public function detailpembayaran($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $historyPembelianModel = new HistoryPembelianModel();
+        $detailTransaksiModel = new DetailTransaksiModel();
+
+        $data['title'] = "Detail Pembayaran";
+        $data['pembayaran'] = $historyPembelianModel->join('user', 'history_pembelian.email = user.email')->join('langganan', 'history_pembelian.id_langganan = langganan.id_langganan')->find($id);
+        $data['detail_pembayaran'] = $detailTransaksiModel->where('id_history', $id)->findAll();
+
+        return view('admin/detail_pembayaran', $data);
+    }
+
+    public function updatePembayaran($id, $status){
+        $historyPembelianModel = new HistoryPembelianModel();
+
+        if($status == 1){
+            $userModel = new UserModel();
+            $data = $historyPembelianModel->join('user', 'history_pembelian.email = user.email')->join('langganan', 'history_pembelian.id_langganan = langganan.id_langganan')->find($id);
+
+            if($data['rentang'] == "Hari"){
+                $pertambahanHari = $data['lama'] * 1;
+            }else if($data['rentang'] == "Bulan"){
+                $pertambahanHari = $data['lama'] * 30;
+            }else if($data['rentang'] == "Tahub"){
+                $pertambahanHari = $data['lama'] * 365;
+            }
+
+            $result = $userModel->update($data['email'], [
+                'level' => 2,
+                'expired_date' => date('Y/m/d', strtotime("+$pertambahanHari days"))
+            ]);
+
+            $historyPembelianModel->update($id, [
+                'status' => 'Berhasil',
+                'tanggal_berlaku' => date('Y/m/d')." - ".date('Y/m/d', strtotime("+$pertambahanHari days"))
+            ]);
+
+            if($result !== false){
+                return redirect()->back()->with('info', 'Berhasil mengupdate status pembayaran');
+            }else{
+                return redirect()->back()->with('error', 'Gagal mengupdate status pembayaran');
+            }
+
+        }else if($status == 0){
+            $result = $historyPembelianModel->update($id, [
+                'status' => 'Ditolak'
+            ]);
+
+            if($result !== false){
+                return redirect()->back()->with('info', 'Berhasil mengupdate status pembayaran');
+            }else{
+                return redirect()->back()->with('error', 'Gagal mengupdate status pembayaran');
+            }
+        }
+    }
+
+    public function user(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $userModel = new UserModel();
+
+        $data['title'] = "User";
+        $data['user'] = $userModel->where('role!=', 'admin')->findAll();
+
+        return view('admin/list_user.php', $data);
+    }
+
+    public function detailuser($idUser){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $userModel = new UserModel();
+        $historyPembelianModel = new HistoryPembelianModel();
+
+        $data['title'] = "Detail User";
+        $data['user'] = $userModel->find($idUser);
+        $data['pembayaran'] = $historyPembelianModel->join('user', 'history_pembelian.email = user.email')->join('langganan', 'history_pembelian.id_langganan = langganan.id_langganan')->where('history_pembelian.email', $idUser)->findAll();
+
+        return view('admin/detail_user.php', $data);
     }
 }

@@ -44,7 +44,10 @@ $routes->get('/user', 'Home::index');
 $routes->get('/course_detail/(:any)', 'Home::courseDetail/$1');
 $routes->get('/search', 'Home::search');
 $routes->get('/membership', 'Home::membership');
-
+$routes->get('/langganan_pembayaran/(:any)', 'Home::pembayaranlangganan/$1');
+$routes->post('/bayar_langganan/(:any)/(:any)', 'Home::bayar/$1/$2');
+$routes->get('/course_materi_detail/(:any)', 'Home::detailMateri/$1');
+$routes->get('/rating/(:any)/(:any)', 'Home::rating/$1/$2');
 
 // routes admin
 $routes->get('/admin/login', 'Login::index');
@@ -68,15 +71,23 @@ $routes->post('/admin/langganan/delete/(:any)', 'Admin::deletelangganan/$1');
 $routes->get('/admin/langganan/editlangganan/(:any)', 'Admin::editlangganan/$1');
 $routes->post('/admin/langganan/updatelangganan/(:any)', 'Admin::updatelangganan/$1');
 
-//routet user
+// routes admin pembayaran
+$routes->get('/admin/pembayaran', 'Admin::pembayaran');
+$routes->get('/admin/pembayaran/detailpembayaran/(:any)', 'Admin::detailpembayaran/$1');
+$routes->post('/admin/pembayaran/updatePembayaran/(:any)/(:any)', 'Admin::updatePembayaran/$1/$2');
+
+// routes admin user
+$routes->get('/admin/user', 'Admin::user');
+$routes->get('/admin/user/detailuser/(:any)', 'Admin::detailuser/$1');
+
+//routes user
 $routes->post('/register', 'Register::process');
 $routes->post('/login', 'Login::process');
 $routes->get('/login/logoutUser', 'Login::logoutUser');
-$routes->get('/profile', 'Profile::index');
-$routes->get('/riwayat_langganan', 'RiwayatLangganan::index');
-$routes->get('/langganan_pembayaran', 'LanggananPembayaran::index');
-$routes->get('/course_materi_detail', 'CourseMateriDetail::index');
-$routes->get('/settings_profile', 'SettingProfile::index');
+$routes->get('/profile', 'Home::profile');
+$routes->get('/riwayat_langganan', 'Home::riwayatlangganan');
+$routes->get('/settings_profile', 'Home::settings_profile');
+$routes->post('/updateprofile', 'Home::updateprofile');
 
 /*
  * --------------------------------------------------------------------

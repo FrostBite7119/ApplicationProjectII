@@ -18,9 +18,6 @@
                                 <div class="tutor-course-top-info__meta">
                                     <div class="tutor-course-top-info__meta-update">Terakhir diperbarui: <?= date("d-m-Y", strtotime($modul['updated_at'])) ?></div>
                                 </div>
-                                <div class="tutor-course-top-info__meta">
-                                    <div class="tutor-course-top-info__meta-action"><i class="meta-icon far fa-user-alt"></i> 0 already enrolled</div>
-                                </div>
                             </div>
                             <!-- Tutor Course Top Info End -->
                         </div>
@@ -134,24 +131,18 @@
                                                     <div class="course-curriculum__lessons">
                                                         <?php foreach($materi as $dataMateri) : ?>
                                                             <?php if($dataMateri['id_sub_modul'] == $dataSubModul['id_sub_modul']) : ?>
-                                                            <div class="course-curriculum__lesson">
-                                                                <span class="course-curriculum__title">
-                                                                    <i class="far fa-file-alt"></i>
-                                                                    <?php //if(session()->get('')) : ?>
-                                                                        <a href=""><?= $dataMateri['judul_materi']; ?></a>
-                                                                    <?php //endif; ?>
-                                                                </span>
-                                                                <span class="course-curriculum__icon">
-                                                                    <i class="far fa-lock-alt"></i>
-                                                                </span>
-                                                            </div>
+                                                                <div class="course-curriculum__lesson">
+                                                                    <span class="course-curriculum__title">
+                                                                        <i class="far fa-file-alt"></i>
+                                                                        <a href="/course_materi_detail/<?= $dataMateri['id_materi'] ?>"><?= $dataMateri['judul_materi']; ?></a>
+                                                                    </span>                                            
+                                                                </div>
                                                             <?php endif; ?>
                                                         <?php endforeach; ?>
                                                     </div>
-
                                                 </div>
                                             </div>     
-                                            <?php endforeach; ?>                           
+                                            <?php endforeach; ?>
                                         </div>                                            
                                     </div>
                                     <!-- Tutor Course Segment End -->
@@ -166,20 +157,19 @@
                                 <div class="tutor-course-main-segment">
                                     <!-- Tutor Course Segment Start -->
                                     <div class="tutor-course-segment">
-                                        <h4 class="tutor-course-segment__title">Student Feedback</h4>
+                                        <h4 class="tutor-course-segment__title">Rating Pengguna</h4>
 
                                         <div class="tutor-course-segment__feedback">
                                             <div class="tutor-course-segment__reviews-average">
-                                                <div class="count">4.4</div>
+                                                <div class="count"><?= number_format((double) $rating[0]['rata'], 1, '.'); ?></div>
                                                 <div class="reviews-rating-star">
                                                     <div class="rating-star">
-                                                        <div class="rating-label" style="width: 90%;"></div>
+                                                        <div class="rating-label" style="width: <?= $rating[0]['rata']/5*100 ?>%;"></div>
                                                     </div>
                                                 </div>
-                                                <div class="rating-total">8 Ratings</div>
+                                                <div class="rating-total"><?= (int) $rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']; ?> Rating</div>
                                             </div>
                                             <div class="tutor-course-segment__reviews-metar">
-
                                                 <div class="course-rating-metar">
                                                     <div class="rating-metar-star">
                                                         <div class="rating-star">
@@ -188,10 +178,10 @@
                                                     </div>
                                                     <div class="rating-metar-col">
                                                         <div class="rating-metar-bar">
-                                                            <div class="rating-metar-line" style="width: 75%;"></div>
+                                                            <div class="rating-metar-line" style="width: <?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating5[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%;"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="rating-metar-text">75%</div>
+                                                    <div class="rating-metar-text"><?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating5[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%</div>
                                                 </div>
 
                                                 <div class="course-rating-metar">
@@ -202,10 +192,10 @@
                                                     </div>
                                                     <div class="rating-metar-col">
                                                         <div class="rating-metar-bar">
-                                                            <div class="rating-metar-line" style="width: 13%;"></div>
+                                                            <div class="rating-metar-line" style="width: <?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating4[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%;"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="rating-metar-text">13%</div>
+                                                    <div class="rating-metar-text"><?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating4[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%</div>
                                                 </div>
 
                                                 <div class="course-rating-metar">
@@ -216,10 +206,10 @@
                                                     </div>
                                                     <div class="rating-metar-col">
                                                         <div class="rating-metar-bar">
-                                                            <div class="rating-metar-line" style="width: 0%;"></div>
+                                                            <div class="rating-metar-line" style="width: <?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating3[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%;"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="rating-metar-text">0%</div>
+                                                    <div class="rating-metar-text"><?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating3[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%</div>
                                                 </div>
 
                                                 <div class="course-rating-metar">
@@ -230,10 +220,10 @@
                                                     </div>
                                                     <div class="rating-metar-col">
                                                         <div class="rating-metar-bar">
-                                                            <div class="rating-metar-line" style="width: 0%;"></div>
+                                                            <div class="rating-metar-line" style="width: <?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating2[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%;"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="rating-metar-text">0%</div>
+                                                    <div class="rating-metar-text"><?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating2[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%</div>
                                                 </div>
 
                                                 <div class="course-rating-metar">
@@ -244,49 +234,17 @@
                                                     </div>
                                                     <div class="rating-metar-col">
                                                         <div class="rating-metar-bar">
-                                                            <div class="rating-metar-line" style="width: 13%;"></div>
+                                                            <div class="rating-metar-line" style="width: <?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating1[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%;"></div>
                                                         </div>
                                                     </div>
-                                                    <div class="rating-metar-text">13%</div>
+                                                    <div class="rating-metar-text"><?php if(($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total']) > 0){ echo ((double) $rating1[0]['total'] / ($rating1[0]['total'] + $rating2[0]['total'] + $rating3[0]['total'] + $rating4[0]['total'] + $rating5[0]['total'])) * 100; }else{ echo 0;} ?>%</div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Tutor Course Segment End -->
-
-                                    <!-- Tutor Course Segment Start -->
-                                    <div class="tutor-course-segment">
-                                        <h4 class="tutor-course-segment__title">Write a review</h4>
-
-                                        <div class="tutor-course-segment__reviews">
-                                            <button class="tutor-course-segment__btn btn btn-primary btn-hover-secondary" data-bs-toggle="collapse" data-bs-target="#collapseForm">Write a review</button>
-
-                                            <div class="collapse" id="collapseForm">
-                                                <!-- Comment Form Start -->
-                                                <div class="comment-form">
-                                                    <form action="#">
-                                                        <div class="comment-form__rating">
-                                                            <label class="label">Your rating: *</label>
-                                                            <ul id="rating" class="rating">
-                                                                <li class="star" title='Poor' data-value='1'><i class="far fa-star"></i></li>
-                                                                <li class="star" title='Poor' data-value='2'><i class="far fa-star"></i></li>
-                                                                <li class="star" title='Poor' data-value='3'><i class="far fa-star"></i></li>
-                                                                <li class="star" title='Poor' data-value='4'><i class="far fa-star"></i></li>
-                                                                <li class="star" title='Poor' data-value='5'><i class="far fa-star"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <!-- Comment Form End -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Tutor Course Segment End -->
-
                                 </div>
                                 <!-- Tutor Course Main Segment End -->
-
                             </div>
                         </div>
 
@@ -312,13 +270,10 @@
                                             <div class="label"><i class="far fa-tag"></i> Kategori </div>
                                             <div class="value"><a href="#"><?= $modul['kategori']; ?></a></div>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                                 <div class="tutor-course-price-preview__btn">
-                                <a href="/course_materi_detail">
                                     <button class="btn btn-primary btn-hover-secondary w-100"> <i class="far fa-plus"></i> Kursus Saya </button>
-                                    </a> 
                                 </div>
                             </div>
                             <!-- Tutor Course Price Preview End -->

@@ -66,9 +66,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
+        <!-- <div class="image">
           <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
+        </div> -->
         <div class="info">
           <a href="#" class="d-block"><?= session()->get('nama'); ?></a>
         </div>
@@ -90,6 +90,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
+            <a href="/admin/user" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "user"){echo "active"; }?>">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/modul" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "modul"){echo "active"; }?>">
               <i class="nav-icon fas fa-book"></i>
               <p>
@@ -102,6 +110,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Langganan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/pembayaran" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "pembayaran"){echo "active"; }?>">
+              <i class="nav-icon fas fa-receipt"></i>
+              <p>
+                Pembayaran
               </p>
             </a>
           </li>
@@ -556,9 +572,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="form-group">
                     <label for="exampleInputFile">Visibilitas Untuk</label>
                     <select class="form-control select2" style="width: 100%;" name="subModul[${indexModul}][materi][${materi.inputMateri}][visibilitas]">
-                    <option value="1" >Guest</option>
-                    <option value="2" >User Tidak Berlangganan</option>
-                    <option value="3" >User Berlangganan</option>
+                    <option value="0" >Guest</option>
+                    <option value="1" >User Tidak Berlangganan</option>
+                    <option value="2" >User Berlangganan</option>
                     </select>
                 </div>
               </div>
@@ -672,9 +688,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <div class="form-group">
                     <label for="exampleInputFile">Visibilitas Untuk</label>
                     <select class="form-control select2" style="width: 100%;" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][visibilitas]">
-                      <option value="1" <?php if($dataMateri['visibilitas'] == 1){echo "selected"; }?>>Guest</option>
-                      <option value="2" <?php if($dataMateri['visibilitas'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
-                      <option value="3" <?php if($dataMateri['visibilitas'] == 3){echo "selected"; }?>>User Berlangganan</option>
+                      <option value="0" <?php if($dataMateri['visibilitas'] == 1){echo "selected"; }?>>Guest</option>
+                      <option value="1" <?php if($dataMateri['visibilitas'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
+                      <option value="2" <?php if($dataMateri['visibilitas'] == 3){echo "selected"; }?>>User Berlangganan</option>
                     </select>
                   </div>
                 </div>
@@ -774,9 +790,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="form-group">
                       <label for="exampleInputFile">Visibilitas Untuk</label>
                       <select class="form-control select2" style="width: 100%;" name="subModul[<?= $i; ?>][materi][<?= $j; ?>][visibilitas]">
-                        <option value="1" <?php if($dataMateri['level'] == 1){echo "selected"; }?>>Guest</option>
-                        <option value="2" <?php if($dataMateri['level'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
-                        <option value="3" <?php if($dataMateri['level'] == 3){echo "selected"; }?>>User Berlangganan</option>
+                        <option value="0" <?php if($dataMateri['level'] == 1){echo "selected"; }?>>Guest</option>
+                        <option value="1" <?php if($dataMateri['level'] == 2){echo "selected"; }?>>User Tidak Berlangganan</option>
+                        <option value="2" <?php if($dataMateri['level'] == 3){echo "selected"; }?>>User Berlangganan</option>
                       </select>
                     </div>
                   </div>
