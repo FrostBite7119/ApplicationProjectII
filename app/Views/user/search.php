@@ -389,8 +389,6 @@
                                             <div class="rating-star">
                                                 <div class="rating-label" style="width: <?= ((double) $dataModul['rata'] / 5) *100 ?>%;"></div>
                                             </div>
-
-                                            <span>(<?= (int) $dataModul['total']; ?>)</span>
                                         </div>
                                     </div>
                                 </div>
