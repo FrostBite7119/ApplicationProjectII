@@ -61,7 +61,7 @@ class Register extends BaseController
             'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
             'no_telepon' => $this->request->getPost('nomor-telepon'),
             'alamat' => $this->request->getPost('alamat'),
-            'level' => 0
+            'level' => 1
         ]);
 
         session()->setFlashdata('info', 'Berhasil register login untuk melanjutkan');

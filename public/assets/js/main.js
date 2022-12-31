@@ -83,7 +83,7 @@
             var linkPage = this.href.substring(this.href.lastIndexOf('/') + 1); 
     
             if (activePage == linkPage) { 
-                $(this).closest("li").addClass("active"); 
+                // $(this).closest("li").addClass("active"); 
             }
         });
     })

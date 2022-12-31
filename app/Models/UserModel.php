@@ -9,17 +9,12 @@ class UserModel extends Model
     protected $table      = 'user';
     protected $primaryKey = 'email';
     protected $returnType = 'array';
-    protected $allowedFields = ['nama', 'email', 'password', 'no_telepon', 'alamat', 'level'];
+    protected $allowedFields = ['nama', 'email', 'password', 'no_telepon', 'alamat', 'level', 'profile','expired_date'];
     protected $useTimestamps = false;
 
     protected $validationRules = [
         'nama' => 'required',
-        'email' => [
-            'rules' => 'required|is_unique[user.email]',
-            'errors' => [
-                'is_unique' => 'Email sudah digunakan'
-            ]
-        ],
+        'email' => 'required',
         'password' => 'required',
         'no_telepon' => 'required',
         'alamat' => 'required'

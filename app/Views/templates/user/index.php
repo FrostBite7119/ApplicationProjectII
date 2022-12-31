@@ -109,7 +109,7 @@
                                         <li class="header-mini-cart__item">
                                             <a href="#" class="header-mini-cart__close"></a>
                                             <div class="header-mini-cart__thumbnail">
-                                                <a href="shop-single-list-left-sidebar.html"><img src="assets/images/product/product-1.png" alt="Product" width="80" height="93"></a>
+                                                <a href="shop-single-list-left-sidebar.html"><img src="/assets/images/product/product-1.png" alt="Product" width="80" height="93"></a>
                                             </div>
                                             <div class="header-mini-cart__caption">
                                                 <h3 class="header-mini-cart__name"><a href="shop-single-list-left-sidebar.html">Awesome for Websites</a></h3>
@@ -119,7 +119,7 @@
                                         <li class="header-mini-cart__item">
                                             <a href="#" class="header-mini-cart__close"></a>
                                             <div class="header-mini-cart__thumbnail">
-                                                <a href="shop-single-list-left-sidebar.html"><img src="assets/images/product/product-2.png" alt="Product" width="80" height="93"></a>
+                                                <a href="shop-single-list-left-sidebar.html"><img src="/assets/images/product/product-2.png" alt="Product" width="80" height="93"></a>
                                             </div>
                                             <div class="header-mini-cart__caption">
                                                 <h3 class="header-mini-cart__name"> <a href="shop-single-list-left-sidebar.html">Awesome for Websites</a></h3>
@@ -162,7 +162,7 @@
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn" >
                                             <div class="account-profile__avatar">
-                                                <img src="assets/images/avatar-placeholder.jpg">
+                                                <img src="/user_profile/<?= session()->get('profile'); ?>">
                                             </div>
                                         </a>
                                         <!-- Header Mini Cart Start -->
@@ -170,23 +170,13 @@
                                             <!-- Header Mini Cart Product List Start -->
                                              <div class="sub-menu-p">
                                                 <div class="user-info">
-                                                    <img src="assets/images/avatar-placeholder.jpg">
+                                                    <img src="/user_profile/<?= session()->get('profile'); ?>">
                                                     <h3><?php echo $_SESSION['nama']?></h3>
                                                 </div>
                                                 <hr>
-                                                <li class="sub-item">
-                                                <span class="material-icons-outlined"> grid_view </span>
-                                                <p>Dashboard</p>
-                                                </li>
-                                                <li class="sub-item">
-                                                <span class="material-icons-outlined">
-                                                    format_list_bulleted
-                                                </span>
-                                                <p>My Orders</p>
-                                                </li>
                                                 <a href="/profile" class="sub-item">
                                                 <span class="material-icons-outlined"> manage_accounts </span>
-                                                <p>Update Profile</p>
+                                                <p>Profile</p>
                                                 </li>
                                                 <a href="/login/logoutUser" class="sub-item">
                                                 <span class="material-icons-outlined"> logout </span>
@@ -395,7 +385,7 @@
                             </div>
                         </div>
                     </div>
-                <form action="/register" method="post">
+                </form>
                 <!-- Modal Content End -->
 
             </div>
@@ -404,6 +394,38 @@
         </div>
     </div>
     <!-- Log In Modal End -->
+    <div class="modal fade" id="modalInfo">
+        <div class="modal-dialog modal-dialog-centered modal-register">
+            <!-- Modal Wrapper Start -->
+            <div class="modal-wrapper">
+                <button class="modal-close" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>
+                <!-- Modal Content Start -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Info</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row gy-5">
+                                <div class="col-md-12">
+                                    <div class="modal-form">
+                                        <?php if(session()->getFlashdata('informasi')) : ?>
+                                            <?= session()->getFlashdata('informasi') ?>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="modal-form">
+                                        <button type="submit" class="btn btn-primary btn-hover-secondary w-100" data-bs-dismiss="modal">Ok</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Modal Content End -->
+            </div>
+            <!-- Modal Wrapper End -->
+        </div>
+    </div>
 
     <!-- JS Vendor, Plugins & Activation Script Files -->
 
@@ -449,7 +471,13 @@
              $("#loginModal").modal('show');
          });
         <?php endif; ?>
+        <?php if(session()->getFlashData('informasi')) : ?>
+        $(document).ready(function(){
+             $("#modalInfo").modal('show');
+         });
+        <?php endif; ?>
     </script>
+
     <script>
         let subMenu = document.getElementById("subMenu");
 

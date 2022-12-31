@@ -17,6 +17,9 @@ class Login extends BaseController
     public function process(){
         $userModel = new UserModel();
 
+        // Cek Langganan
+        $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+
         $email = $this->request->getPost('email');
         $dataUser = $userModel->find($email);
 
@@ -28,7 +31,8 @@ class Login extends BaseController
                         'email' => $dataUser['email'],
                         'nama' => $dataUser['nama'],
                         'role' => $dataUser['role'],
-                        'level' => $dataUser['level']
+                        'level' => $dataUser['level'],
+                        'profile' =>$dataUser['profile']
                     ]);
                     return redirect()->to(base_url('user'));
                 }
@@ -46,6 +50,9 @@ class Login extends BaseController
     public function processAdmin(){
         $userModel = new UserModel();
 
+        // Cek Langganan
+        $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+        
         $email = $this->request->getPost('email');
         $dataUser = $userModel->find($email);
 

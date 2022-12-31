@@ -54,7 +54,19 @@
                                         </div>
                                         <div class="pricing-plan__wrap">
                                             <span class="pricing-plan__currency">Rp</span>
-                                            <span class="pricing-plan__price"><?= number_format($dataLangganan['biaya_langganan']) ?></span>                
+                                            <?php if($dataLangganan['waktu_diskon'] != null) : ?>
+                                                <?php if(date('d/m/Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d/m/Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?> <s> <?php endif;?>
+                                            <?php endif; ?>
+                                                <span class="pricing-plan__price"><?= number_format($dataLangganan['biaya_langganan']) ?></span>
+                                            <?php if($dataLangganan['waktu_diskon'] != null) : ?>
+                                                <?php if(date('d-m-Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d-m-Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?></s><?php endif;?>
+                                            <?php endif; ?>
+                                            <?php if($dataLangganan['waktu_diskon'] != null) : ?>
+                                                <?php if(date('d/m/Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d/m/Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?>
+                                                    <span class="pricing-plan__currency">Rp</span>
+                                                    <span class="pricing-plan__price"><?= number_format($dataLangganan['biaya_langganan'] - $dataLangganan['diskon']) ?></span>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
                                         </div>
                                         <div class="pricing-plan__body">
                                             <ul class="pricing-plan__features">
@@ -62,7 +74,7 @@
                                             </ul>
                                         </div>
                                         <div class="pricing-plan__footer">
-                                            <a class="pricing-plan__btn btn btn-primary btn-hover-secondary" href="/langganan_pembayaran">Berlangganan</a>
+                                            <a class="pricing-plan__btn btn btn-primary btn-hover-secondary" href="/langganan_pembayaran/<?= $dataLangganan['id_langganan']; ?>">Berlangganan</a>
                                         </div>
                                     </div>
                                     <!-- Membership plans Tabs End -->
@@ -73,7 +85,6 @@
                     </div>
                 </div>
                 <!-- Membership plans Tabs End -->
-
             </div>
         </div>
         <!-- Membership plans Section End -->
