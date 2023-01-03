@@ -161,7 +161,7 @@
 
                                         <div class="tutor-course-segment__feedback">
                                             <div class="tutor-course-segment__reviews-average">
-                                                <div class="count"><?= number_format((double) $rating[0]['rata'], 1, '.'); ?></div>
+                                            <div class="count"><?= number_format((double) $rating[0]['rata'], 1) ?></div>
                                                 <div class="reviews-rating-star">
                                                     <div class="rating-star">
                                                         <div class="rating-label" style="width: <?= $rating[0]['rata']/5*100 ?>%;"></div>
@@ -273,6 +273,7 @@
                                     </ul>
                                 </div>
                                 <div class="tutor-course-price-preview__btn">
+                                <a href="/kursus_saya">
                                     <button class="btn btn-primary btn-hover-secondary w-100"> <i class="far fa-plus"></i> Kursus Saya </button>
                                 </div>
                             </div>

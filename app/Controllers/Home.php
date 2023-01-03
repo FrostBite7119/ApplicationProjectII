@@ -13,6 +13,7 @@ use App\Models\UserModel;
 use App\Models\DetailTransaksiModel;
 use App\Models\MateriModel;
 use App\Models\RatingModel;
+use App\Models\TestimoniModel;
 
 class Home extends BaseController
 {
@@ -28,6 +29,7 @@ class Home extends BaseController
 
     public function home(){
         $modulModel = new ModulModel();
+        $testimoniModel = new TestimoniModel();
 
         $builder = $modulModel;
 
@@ -38,6 +40,8 @@ class Home extends BaseController
 
         $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy(['m.id_modul'])->paginate(15, 'modul');
         $data['pager'] = $modulModel->pager;
+        $data['testimoni'] = $testimoniModel->findAll();
+    
 
         return view('user/home', $data);
     }
@@ -159,6 +163,17 @@ class Home extends BaseController
 
         return view('user/membership', $data);
     }
+
+    // public function testimoniHome(){
+    //     // if (session()->get('role') !== 'user') { // jika bukan admin
+    //     //     return redirect()->to(base_url());
+    //     // }
+
+    //     $data['testimoni'] = $testimoniModel->findAll();
+    //     return view('admin/list_testimoni', $data);
+        
+    // }
+    
 
     public function pembayaranlangganan($id){
         $langgananModel = new LanggananModel();
@@ -310,6 +325,30 @@ class Home extends BaseController
         $data['user'] = $userModel->find(session()->get('email'));
 
         return view('user/settings_profile', $data);
+    }
+
+    public function settings_reset_pass(){
+        if (session()->get('role') !== 'user') { // jika bukan admin
+            return redirect()->route('/');
+        }
+
+        $userModel = new UserModel();
+
+        $data['user'] = $userModel->find(session()->get('email'));
+
+        return view('user/settings_reset_pass', $data);
+    }
+
+    public function kursus_saya(){
+        if (session()->get('role') !== 'user') { // jika bukan admin
+            return redirect()->route('/');
+        }
+
+        $userModel = new UserModel();
+
+        $data['user'] = $userModel->find(session()->get('email'));
+
+        return view('user/kursus_saya', $data);
     }
 
     public function updateprofile(){

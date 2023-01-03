@@ -13,6 +13,7 @@ use App\Models\EditorModel;
 use App\Models\LanggananModel;
 use App\Models\HistoryPembelianModel;
 use App\Models\DetailTransaksiModel;
+use App\Models\TestimoniModel;
 
 class Admin extends BaseController
 {
@@ -514,6 +515,117 @@ class Admin extends BaseController
         }
     }
     // Modul End
+
+    // Testimoni Start
+    public function testimoni(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $testimoniModel = new TestimoniModel();
+
+        $data['title'] = "Testimoni";
+        $data['testimoni'] = $testimoniModel->findAll();
+        return view('admin/list_testimoni', $data);
+    }
+
+    public function addtestimoni(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $data['title'] = "Tambah Testimoni";
+
+        return view('admin/add_testimoni', $data);
+    }
+
+    public function inserttestimoni(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        
+        $testimoniModel = new TestimoniModel();
+        $profileTesti = $this->request->getFile('profile');
+        $newProfileTesti = $profileTesti->getRandomName();
+
+        // if(!$this->request->getPost('diskon')){
+        //     $diskon = null;
+        //     $waktuDiskon = null;
+        // }else{
+        //     $diskon = $this->request->getPost('diskon');
+        //     $waktuDiskon = $this->request->getPost('rentangDiskon');
+        // }
+
+        $result = $testimoniModel->insert([
+            'profile' => $newProfileTesti,
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'nama' => $this->request->getPost('nama'),
+            'bidang' => $this->request->getPost('bidang'),
+        ]);
+
+        if($result !== false){
+            $profileTesti->move('profile_testi', $newProfileTesti);
+            return redirect()->to('admin/testimoni')->with('info', 'Berhasil menambahkan data');
+        }else{
+            return redirect()->back()->withInput()->with('errors', $testimoniModel->errors());
+        }
+    }
+
+    public function deletetestimoni($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        $testimoniModel = new TestimoniModel();
+        $testimoniModel->delete($id);
+        return redirect()->route('admin/testimoni')->with('info', 'Berhasil menghapus data');
+    }
+
+    public function edittestimoni($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $testimoniModel = new TestimoniModel();
+
+        $data['title'] = "Update Testimoni";
+        $data['dataTestimoni'] = $testimoniModel->find($id);
+
+        return view('admin/edit_testimoni', $data);
+    }
+
+    public function updatetestimoni($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+        
+        $testimoniModel = new TestimoniModel();
+        $profileTesti = $this->request->getFile('profile');
+        $newProfileTesti = $profileTesti->getRandomName();
+
+        // if(!$this->request->getPost('diskon')){
+        //     $diskon = null;
+        //     $waktuDiskon = null;
+        // }else{
+        //     $diskon = $this->request->getPost('diskon');
+        //     $waktuDiskon = $this->request->getPost('rentangDiskon');
+        // }
+
+        $result = $testimoniModel->update($id, [
+            'profile' => $newProfileTesti,
+            'deskripsi' => $this->request->getPost('deskripsi'),
+            'nama' => $this->request->getPost('nama'),
+            'bidang' => $this->request->getPost('bidang'),
+        ]);
+
+        if($result !== false){
+            $profileTesti->move('profile_testi', $newProfileTesti);
+            return redirect()->to('admin/testimoni')->with('info', 'Berhasil mengupdate data');
+        }else{
+            return redirect()->back()->withInput()->with('errors', $testimoniModel->errors());
+        }
+    }
+
+    // Testimoni End
 
     // Langganan Start
     public function langganan(){

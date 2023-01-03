@@ -63,6 +63,14 @@ $routes->post('/admin/modul/delete/(:any)', 'Admin::deleteModul/$1');
 $routes->get('/admin/modul/editdata/(:any)', 'Admin::editdata/$1');
 $routes->post('/admin/modul/updatemodul/(:any)', 'Admin::updateModul/$1');
 
+// routes admin testimoni
+$routes->get('/admin/testimoni', 'Admin::testimoni');
+$routes->get('/admin/testimoni/addtestimoni', 'Admin::addtestimoni');
+$routes->post('/admin/testimoni/inserttestimoni', 'Admin::inserttestimoni');
+$routes->post('/admin/testimoni/delete/(:any)', 'Admin::deletetestimoni/$1');
+$routes->get('/admin/testimoni/edittestimoni/(:any)', 'Admin::edittestimoni/$1');
+$routes->post('/admin/testimoni/updatetestimoni/(:any)', 'Admin::updatetestimoni/$1');
+
 // routes admin langganan
 $routes->get('/admin/langganan', 'Admin::langganan');
 $routes->get('/admin/langganan/addlangganan', 'Admin::addlangganan');
@@ -87,6 +95,8 @@ $routes->get('/login/logoutUser', 'Login::logoutUser');
 $routes->get('/profile', 'Home::profile');
 $routes->get('/riwayat_langganan', 'Home::riwayatlangganan');
 $routes->get('/settings_profile', 'Home::settings_profile');
+$routes->get('/settings_reset_pass', 'Home::settings_reset_pass');
+$routes->get('/kursus_saya', 'Home::kursus_saya');
 $routes->post('/updateprofile', 'Home::updateprofile');
 
 /*

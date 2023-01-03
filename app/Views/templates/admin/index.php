@@ -114,6 +114,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/testimoni" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "testimoni"){echo "active"; }?>">
+              <i class="nav-icon fas fa-money-bill"></i>
+              <p>
+                Testimoni
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/pembayaran" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "pembayaran"){echo "active"; }?>">
               <i class="nav-icon fas fa-receipt"></i>
               <p>

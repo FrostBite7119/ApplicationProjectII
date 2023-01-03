@@ -11,8 +11,8 @@
             <!-- Dashboard Tabs Start -->
             <div class="dashboard-tabs-menu">
                 <ul>
-                    <li><a class="active" href="dashboard-settings.html">Profile</a></li>
-                    <li><a href="dashboard-settings-reset-password.html">Reset Password</a></li>
+                    <li><a class="active" href="/settings_profile">Profile</a></li>
+                    <li><a href="/settings_reset_pass">Reset Password</a></li>
                 </ul>
             </div>
             <!-- Dashboard Tabs End -->
