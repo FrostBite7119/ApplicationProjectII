@@ -19,7 +19,7 @@ class Login extends BaseController
         $userModel = new UserModel();
 
         // Cek Langganan
-        $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+        $userModel->where('expired_date <', date('Y-m-d'))->set(['level'=> 1,'expired_date' => null])->update();
 
         $email = $this->request->getPost('email');
         $dataUser = $userModel->find($email);
@@ -57,7 +57,7 @@ class Login extends BaseController
         $data['jumlahModul'] = $modulModel->countAllResults();
 
         // Cek Langganan
-        $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+        $userModel->where('expired_date <', date('Y-m-d'))->set(['level'=> 1,'expired_date' => null])->update();
         
         $email = $this->request->getPost('email');
         $dataUser = $userModel->find($email);

@@ -2,9 +2,9 @@
 
 <?= $this->section('content'); ?>
 <?php
-    $potongan = [];
+    $detailTransaksi = [];
     if($isFirstTime){    
-        $potongan[] = [
+        $detailTransaksi[] = [
             'namaPotongan' => "Pembelian Pertama",
             'jumlah' => -50000
         ];
@@ -40,7 +40,7 @@
                             <?php if($langganan['waktu_diskon'] != null) : ?>
                                 <?php if(date('d/m/Y') >= explode(' - ', $langganan['waktu_diskon'])[0] && date('d/m/Y') <= explode(' - ', $langganan['waktu_diskon'])[1]): ?>
                                     <?php
-                                        $potongan[] = [
+                                        $detailTransaksi[] = [
                                             'namaPotongan' => "Diskon",
                                             'jumlah' => -$langganan['diskon']
                                         ];
@@ -114,24 +114,30 @@
                         <?php endif; ?>
                         <div class="d-flex justify-content-between">
                             <div>
-                                <?php if(isset($potongan)) : ?>
-                                    <?php foreach($potongan as $dataPotongan) : ?>
-                                        <div class="text-green-500 mb-2"><?= $dataPotongan['namaPotongan']; ?></div>    
+                                <div class="text-green-500 mb-2">Biaya Langganan</div>
+                                <?php if(isset($detailTransaksi)) : ?>
+                                    <?php foreach($detailTransaksi as $dataPotongan) : ?>
+                                        <div class="text-green-500 mb-2"><?= $dataPotongan['namaPotongan']; ?></div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                                 <p style="font-weight: bold;">Jumlah Tagihan</p>
                             </div>
                             <div class="text-lg text-gray-600 text-right">
-                                <?php if(isset($potongan)) : ?>
-                                    <?php foreach($potongan as $dataPotongan) : ?>
-                                        <div class="text-total">Rp<?= number_format(-$dataPotongan['jumlah']); ?></div>
+                                <div class="text-total">Rp<?= number_format($langganan['biaya_langganan']); ?></div>
+                                <?php if(isset($detailTransaksi)) : ?>
+                                    <?php foreach($detailTransaksi as $dataPotongan) : ?>
+                                        <div class="text-total">Rp<?= number_format($dataPotongan['jumlah']); ?></div>
                                     <?php endforeach; ?>
                                 <?php endif; ?>
                                 <?php
                                     $totalBiaya = $langganan['biaya_langganan'];
-                                    if(isset($potongan)){
-                                        foreach($potongan as $dataPotongan){
-                                            $totalBiaya -= $dataPotongan['jumlah'];
+                                    if(isset($detailTransaksi)){
+                                        foreach($detailTransaksi as $dataPotongan){
+                                            $totalBiaya += $dataPotongan['jumlah'];                                            
+                                        }
+
+                                        if($totalBiaya < 0){
+                                            $totalBiaya = 0;
                                         }
                                     }
                                 ?>
@@ -142,11 +148,11 @@
                             <?php if(session()->get('role') == 'user') : ?>
                                 <?php if(!$isPending) : ?>
                                     <?php if($user['expired_date'] == null) : ?>
-                                        <?php if(count($potongan) > 0) : ?>
+                                        <?php if(count($detailTransaksi) > 0) : ?>
                                             <?php $i = 0; ?>
-                                            <?php foreach($potongan as $dataPotongan) : ?>
+                                            <?php foreach($detailTransaksi as $dataPotongan) : ?>
                                                 <input type="hidden" value="<?= $dataPotongan['namaPotongan'] ?>" name="potongan[<?= $i ?>][namaPotongan]">
-                                                <input type="hidden" value="<?= $dataPotongan['jumlah'] ?>" name="potongan[<?= $i ?>][jumlah]">                                    
+                                                <input type="hidden" value="<?= $dataPotongan['jumlah'] ?>" name="potongan[<?= $i ?>][jumlah]">
                                                 <?php $i++; ?>
                                             <?php endforeach; ?>
                                         <?php endif; ?>

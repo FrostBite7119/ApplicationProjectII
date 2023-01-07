@@ -50,7 +50,7 @@
                                 <td style="text-align: center"><img src="/cover/<?= $data['cover']; ?>" alt="" width="150"></td>
                                 <td><?= $data['judul_modul']; ?></td>
                                 <td><?= $data['level']; ?></td>
-                                <td><?= $data['kategori']; ?></td>
+                                <td><?= $data['nama_kategori']; ?></td>
                                 <td>
                                   <form action="/admin/modul/editdata/<?= $data['id_modul']; ?>" method="get" style="display: inline">
                                     <button type="submit" class="btn btn-sm btn-warning" style="margin-right: 10px" <?php if(array_search($data['id_modul'], array_column($status, 'id_modul')) === false){ echo "disabled"; }?>>Edit</button>

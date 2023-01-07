@@ -75,9 +75,9 @@
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Kategori</label>
                                                 <select class="form-control select2" style="width: 100%;" name="kategori">
-                                                    <option value="Android" <?php if(old('level')){if(old('level') == "Android"){ echo "selected"; }}else if($modul['kategori'] == "Android"){ echo "selected"; } ?>>Android</option>
-                                                    <option value="Pemrograman Dasar" <?php if(old('level')){if(old('level') == "Pemrograman Dasar"){ echo "selected"; }}else if($modul['kategori'] == "Pemrograman Dasar"){ echo "selected"; } ?>>Pemrograman Dasar</option>
-                                                    <option value="Web" <?php if(old('level')){if(old('level') == "Web"){ echo "selected"; }}else if($modul['kategori'] == "Web"){ echo "selected"; } ?>>Web</option>
+                                                    <?php foreach($kategori as $dataKategori) : ?>
+                                                        <option value="<?= $dataKategori['id_kategori'] ?>" <?php if(old('kategori')){if(old('kategori') == $dataKategori['id_kategori']){ echo "selected"; }}else if($modul['id_kategori'] == $dataKategori['id_kategori']){ echo "selected"; } ?>><?= $dataKategori['nama_kategori'] ?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                             <div class="form-group">

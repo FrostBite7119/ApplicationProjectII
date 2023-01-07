@@ -103,7 +103,7 @@
                                             <tr>
                                                 <td><?= $dataPembayaran['nama_transaksi'] ?></td>
                                                 <td>Rp<?= number_format($dataPembayaran['jumlah_transaksi']) ?></td>
-                                                <?php $totalBayar+= $dataPembayaran['jumlah_transaksi']; ?>
+                                                <?php $totalBayar+= $dataPembayaran['jumlah_transaksi']; if($totalBayar < 0){$totalBayar = 0;}?>
                                             </tr>
                                         <?php endforeach; ?>                            
                                         <tr>

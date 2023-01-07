@@ -268,7 +268,7 @@
                                         </li>
                                         <li>
                                             <div class="label"><i class="far fa-tag"></i> Kategori </div>
-                                            <div class="value"><a href="#"><?= $modul['kategori']; ?></a></div>
+                                            <div class="value"><a href="#"><?= $modul['nama_kategori']; ?></a></div>
                                         </li>
                                     </ul>
                                 </div>
