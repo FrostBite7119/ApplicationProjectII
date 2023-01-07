@@ -111,7 +111,7 @@
                                     <div class="header-action">
                                         <a href="#" class="header-action__btn" >
                                             <div class="account-profile__avatar">
-                                                <img src="/user_profile/<?= session()->get('profile'); ?>">
+                                                <img src="/user_profile/<?= session()->get('profile'); ?>" >
                                             </div>
                                         </a>
                                         <!-- Header Mini Cart Start -->
@@ -119,7 +119,7 @@
                                             <!-- Header Mini Cart Product List Start -->
                                              <div class="sub-menu-p">
                                                 <div class="user-info">
-                                                    <img src="/user_profile/<?= session()->get('profile'); ?>">
+                                                    <img src="/user_profile/<?= session()->get('profile'); ?>" width="50" height="50">
                                                     <h3><?php echo $_SESSION['nama']?></h3>
                                                 </div>
                                                 <hr>
