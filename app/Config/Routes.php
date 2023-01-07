@@ -84,6 +84,10 @@ $routes->get('/admin/pembayaran', 'Admin::pembayaran');
 $routes->get('/admin/pembayaran/detailpembayaran/(:any)', 'Admin::detailpembayaran/$1');
 $routes->post('/admin/pembayaran/updatePembayaran/(:any)/(:any)', 'Admin::updatePembayaran/$1/$2');
 
+// routes admin kategori
+$routes->get('/admin/kategori', 'Admin::kategori');
+
+
 // routes admin user
 $routes->get('/admin/user', 'Admin::user');
 $routes->get('/admin/user/detailuser/(:any)', 'Admin::detailuser/$1');

@@ -830,4 +830,16 @@ class Admin extends BaseController
 
         return view('admin/detail_user.php', $data);
     }
+
+    public function kategori(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $testimoniModel = new TestimoniModel();
+
+        $data['title'] = "Kategori";
+        $data['testimoni'] = $testimoniModel->findAll();
+        return view('admin/list_kategori', $data);
+    }
 }

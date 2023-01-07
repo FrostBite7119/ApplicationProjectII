@@ -90,6 +90,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item">
+            <a href="/admin" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == ""){echo "active"; }?>">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Beranda
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="/admin/user" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "user"){echo "active"; }?>">
               <i class="nav-icon fas fa-user"></i>
               <p>
@@ -115,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <a href="/admin/testimoni" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "testimoni"){echo "active"; }?>">
-              <i class="nav-icon fas fa-money-bill"></i>
+              <i class="nav-icon fas fa-comment"></i>
               <p>
                 Testimoni
               </p>
@@ -126,6 +134,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <i class="nav-icon fas fa-receipt"></i>
               <p>
                 Pembayaran
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/kategori" class="nav-link <?php $request = \Config\Services::request(); if($request->uri->getSegment(2) == "kategori"){echo "active"; }?>">
+              <i class="nav-icon fas fa-list"></i>
+              <p>
+                Kategori
               </p>
             </a>
           </li>
@@ -149,7 +165,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Footer -->
   <footer class="main-footer">
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2022-2023 Edumall.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
