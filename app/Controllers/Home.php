@@ -21,11 +21,15 @@ class Home extends BaseController
     public function index()
     {
         $userModel = new UserModel();
+        $modulModel = new ModulModel();
 
         // Cek Langganan
         $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+
+        $data['jumlahUser'] = $userModel->where('role!=', 'admin')->countAllResults();
+        $data['jumlahModul'] = $modulModel->countAllResults();
         
-        return view('user/index');
+        return view('user/index', $data);
     }
 
     public function home(){

@@ -87,7 +87,7 @@
                                         <li><a href="/home"><span>Beranda</span></a>
                                         </li>
                                         <li>
-                                            <a href="#"><span>Modul</span></a>
+                                            <a href="/membership"><span>Langganan</span></a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -98,7 +98,7 @@
                             <?php if(session()->get('role') == "user") :?>
                             <div class="header-action">
                                 <a href="/kursus_saya" class="header-action__btn">
-                                    <i class="far fa-heart"></i>
+                                    <i class="far fa-bookmark"></i>
                                     <!-- <span class="header-action__number">3</span> -->
                                 </a>                
                             </div>
@@ -195,10 +195,8 @@
                             <div class="footer-widget text-center">
                                 <a href="#" class="footer-widget__logo"><img src="/assets/images/dark-logo.png" alt="Logo" width="150" height="32"></a>
                                 <div class="footer-widget__social">
-                                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa"></i></a>
+                                    <a href="https://wa.link/ie9h71" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="mailto: 201111017@mhs.stiki.ac.id" target="_blank"><i class="fas fa-envelope"></i></a>
                                 </div>
                                 <p class="footer-widget__copyright">&copy; 2022 <span> EduMall </span></p>
                             </div>

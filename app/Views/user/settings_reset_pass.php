@@ -25,7 +25,7 @@
                     <?php endif; ?>
                     <form action="/change_pass" method="post">
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
 
                                 <!-- Dashboard Settings Info Start -->
                                 <div class="dashboard-content-box dashboard-settings__info">
