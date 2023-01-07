@@ -95,65 +95,14 @@
                             <!-- Header Navigation End -->
 
                             <!-- Header Mini Cart Start -->
+                            <?php if(session()->get('role') == "user") :?>
                             <div class="header-action">
-                                <a href="#" class="header-action__btn">
+                                <a href="/kursus_saya" class="header-action__btn">
                                     <i class="far fa-heart"></i>
-                                    <span class="header-action__number">3</span>
-                                </a>
-
-                                <!-- Header Mini Cart Start -->
-                                <div class="header-mini-cart">
-
-                                    <!-- Header Mini Cart Product List Start -->
-                                    <ul class="header-mini-cart__product-list ">
-                                        <li class="header-mini-cart__item">
-                                            <a href="#" class="header-mini-cart__close"></a>
-                                            <div class="header-mini-cart__thumbnail">
-                                                <a href="shop-single-list-left-sidebar.html"><img src="/assets/images/product/product-1.png" alt="Product" width="80" height="93"></a>
-                                            </div>
-                                            <div class="header-mini-cart__caption">
-                                                <h3 class="header-mini-cart__name"><a href="shop-single-list-left-sidebar.html">Awesome for Websites</a></h3>
-                                                <span class="header-mini-cart__quantity">1 × <strong class="amount">$49</strong><span class="separator">.00</span></span>
-                                            </div>
-                                        </li>
-                                        <li class="header-mini-cart__item">
-                                            <a href="#" class="header-mini-cart__close"></a>
-                                            <div class="header-mini-cart__thumbnail">
-                                                <a href="shop-single-list-left-sidebar.html"><img src="/assets/images/product/product-2.png" alt="Product" width="80" height="93"></a>
-                                            </div>
-                                            <div class="header-mini-cart__caption">
-                                                <h3 class="header-mini-cart__name"> <a href="shop-single-list-left-sidebar.html">Awesome for Websites</a></h3>
-                                                <span class="header-mini-cart__quantity">1 × <strong class="amount">$49</strong><span class="separator">.00</span></span>
-                                            </div>
-                                        </li>
-                                        <li class="header-mini-cart__item">
-                                            <a href="#" class="header-mini-cart__close"></a>
-                                            <div class="header-mini-cart__thumbnail">
-                                                <a href="shop-single-list-left-sidebar.html"><img src="assets/images/product/product-3.png" alt="Product" width="80" height="93"></a>
-                                            </div>
-                                            <div class="header-mini-cart__caption">
-                                                <h3 class="header-mini-cart__name"> <a href="shop-single-list-left-sidebar.html">Awesome for Websites</a></h3>
-                                                <span class="header-mini-cart__quantity">1 × <strong class="amount">$49</strong><span class="separator">.00</span></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <!-- Header Mini Cart Product List End -->
-
-                                    <div class="header-mini-cart__footer">
-                                        <div class="header-mini-cart__total">
-                                            <p class="header-mini-cart__label">Total:</p>
-                                            <p class="header-mini-cart__value">$445<span class="separator">.99</span></p>
-                                        </div>
-                                        <div class="header-mini-cart__btn">
-                                            <a href="cart.html" class="btn btn-primary btn-hover-secondary">View cart</a>
-                                            <a href="checkout.html" class="btn btn-primary btn-hover-secondary">Checkout</a>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <!-- Header Mini Cart End -->
-
+                                    <!-- <span class="header-action__number">3</span> -->
+                                </a>                
                             </div>
+                            <?php endif; ?>
                             <!-- Header Mini Cart End -->
 
                             <!-- Header User Button Start -->
@@ -276,7 +225,6 @@
         <!-- Log In Modal Start -->
         <div class="modal fade" id="loginModal">
             <div class="modal-dialog modal-dialog-centered modal-login">
-
                 <!-- Modal Wrapper Start -->
                 <div class="modal-wrapper">
                     <button class="modal-close" data-bs-dismiss="modal"><i class="fal fa-times"></i></button>    

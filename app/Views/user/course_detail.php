@@ -273,8 +273,9 @@
                                     </ul>
                                 </div>
                                 <div class="tutor-course-price-preview__btn">
-                                <a href="/kursus_saya">
-                                    <button class="btn btn-primary btn-hover-secondary w-100"> <i class="far fa-plus"></i> Kursus Saya </button>
+                                    <form action="/tambahkursussaya/<?= $modul['id_modul']; ?>" method="post">
+                                        <button class="btn <?php if($isAdded){ echo "btn-danger"; }else{ echo "btn-primary"; }?> btn-hover-secondary w-100" <?php if($isAdded){ echo "disabled";} ?>><?php if($isAdded){ echo "Sudah Ditambahkan"; }else{ echo "<i class=\"far fa-plus\"></i> Kursus Saya"; }?></button>
+                                    </form>                            
                                 </div>
                             </div>
                             <!-- Tutor Course Price Preview End -->
