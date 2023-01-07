@@ -98,6 +98,7 @@ $routes->get('/settings_profile', 'Home::settings_profile');
 $routes->get('/settings_reset_pass', 'Home::settings_reset_pass');
 $routes->get('/kursus_saya', 'Home::kursus_saya');
 $routes->post('/updateprofile', 'Home::updateprofile');
+$routes->post('/tambahkursussaya/(:any)', 'Home::tambahkursussaya/$1');
 
 /*
  * --------------------------------------------------------------------

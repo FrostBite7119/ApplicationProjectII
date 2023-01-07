@@ -14,6 +14,7 @@ use App\Models\DetailTransaksiModel;
 use App\Models\MateriModel;
 use App\Models\RatingModel;
 use App\Models\TestimoniModel;
+use App\Models\KursusSayaModel;
 
 class Home extends BaseController
 {
@@ -47,12 +48,12 @@ class Home extends BaseController
     }
 
     public function courseDetail($id){
-
         $modulModel = new ModulModel();
         $subModel = new SubModulModel();
         $targetModel = new TargetModel();
         $syaratModel = new SyaratModel();
         $saranModel = new DisarankanModel();
+        $kursusSayaModel = new KursusSayaModel();
 
         $data['modul'] = $modulModel->find($id);
         $data['totalSub'] = $subModel->where(['id_modul' => $id])->countAllResults();
@@ -61,6 +62,17 @@ class Home extends BaseController
         $data['saran'] = $saranModel->where('id_modul', $id)->findAll();
         $data['subModul']  = $subModel->where('id_modul', $id)->findAll();
         $data['materi'] = $subModel->join('materi', 'sub_modul.id_sub_modul = materi.id_sub_modul')->where('sub_modul.id_modul', $id)->findAll();
+
+        if(session()->get('role') == "user"){
+            $cek = $kursusSayaModel->where(['id_modul' => $id, 'email' => session()->get('email')])->findAll();
+            if($cek){
+                $data['isAdded'] = true;                
+            }else{
+                $data['isAdded'] = false;
+            }
+        }else{
+            $data['isAdded'] = false;
+        }
 
         $builder = $modulModel->builder();
 
@@ -344,9 +356,10 @@ class Home extends BaseController
             return redirect()->route('/');
         }
 
-        $userModel = new UserModel();
+        $kursusSayaModel = new KursusSayaModel();
 
-        $data['user'] = $userModel->find(session()->get('email'));
+        $data['kursus'] = $kursusSayaModel->join('modul', 'kursus_saya.id_modul = modul.id_modul')->where('kursus_saya.email', session()->get('email'))->paginate(9, 'modul');
+        $data['pager'] = $kursusSayaModel->pager;
 
         return view('user/kursus_saya', $data);
     }
@@ -407,6 +420,30 @@ class Home extends BaseController
             return redirect()->back()->with('informasi', "Berhasil di-update");
         }else{
             return redirect()->back()->with('errors', $userModel->errors());
+        }
+    }
+
+    public function tambahkursussaya($idModul){
+        if(session()->get('role') == "user"){
+            $kursusSayaModel = new KursusSayaModel();
+
+            // $cek = $kursusSayaModel->where(['id_modul' => $idModul, 'email' => session()->get('email')]);
+            // if($cek){
+
+            // }
+
+            $result = $kursusSayaModel->insert([
+                'id_modul' => $idModul,
+                'email' => session()->get('email')
+            ]);
+
+            if($result !== false){
+                return redirect()->back()->with('informasi', 'Berhasil ditambahkan');
+            }else{
+                return redirect()->back()->with('informasi', 'Gagal ditambahkan');
+            }
+        }else{
+            return redirect()->back()->with('informasi', 'Login terlebih dahulu untuk menambahkan!');
         }
     }
 }
