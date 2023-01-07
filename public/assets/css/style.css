@@ -20533,3 +20533,9 @@ ul li ul:hover {
 .span.material-symbols-outlined{
   text-align: center;
 }
+
+.icon-trash{
+  font-size: 20px;
+  margin-left: 185px;
+  color: #dc3545;
+}

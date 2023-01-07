@@ -31,6 +31,7 @@
                         <h3 class="course-info-02__title"><a href="/course_detail/<?= $dataKursus['id_modul']; ?>"><?= $dataKursus['judul_modul'] ?></a></h3>
                         <?php if($dataKursus['kategori'] == "Android") :?>
                             <span class="badge rounded-pill bg-success">Android</span>
+                            <i class="fas fa-trash icon-trash"></i>
                         <?php elseif($dataKursus['kategori'] == "Web") : ?>
                             <span class="badge rounded-pill bg-info">Web</span>
                         <?php elseif($dataKursus['kategori'] == "Pemrograman Dasar") : ?>
