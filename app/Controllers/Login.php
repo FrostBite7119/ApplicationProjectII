@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ModulModel;
 
 class Login extends BaseController
 {
@@ -49,6 +50,11 @@ class Login extends BaseController
 
     public function processAdmin(){
         $userModel = new UserModel();
+        $modulModel = new ModulModel();
+
+    
+        $data['jumlahUser'] = $userModel->where('role!=', 'admin')->countAllResults();
+        $data['jumlahModul'] = $modulModel->countAllResults();
 
         // Cek Langganan
         $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();

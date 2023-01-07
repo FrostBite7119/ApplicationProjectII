@@ -22,7 +22,19 @@ class Admin extends BaseController
             return redirect()->route('admin/login');
         }
 
-        return view('admin/home');
+        $userModel = new UserModel();
+        $modulModel = new ModulModel();
+
+        $data['jumlahUser'] = $userModel->where('role!=', 'admin')->countAllResults();
+        $data['jumlahModul'] = $modulModel->countAllResults();
+
+        $historyPembelianModel = new HistoryPembelianModel();
+        $data['history'] = $historyPembelianModel->findAll();
+        $data['title'] = "Beranda";
+        $data['jumlahTransaksiBulan'] = $historyPembelianModel->select('COUNT(*)')->where('MONTH(tanggal_pembelian) = MONTH(CURRENT_DATE)')->countAllResults();
+        $data['jumlahPendapatanBulan'] = $historyPembelianModel->select('SUM(detail_transaksi.jumlah_transaksi) AS total')->join('detail_transaksi','history_pembelian.id_history = detail_transaksi.id_history')->where('MONTH(tanggal_pembelian) = MONTH(CURRENT_DATE)')->findAll();
+      
+        return view('admin/home',$data);
     }
 
     // Modul Start
