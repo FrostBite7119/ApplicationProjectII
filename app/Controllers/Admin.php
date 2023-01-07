@@ -14,6 +14,7 @@ use App\Models\LanggananModel;
 use App\Models\HistoryPembelianModel;
 use App\Models\DetailTransaksiModel;
 use App\Models\TestimoniModel;
+use App\Models\KategoriModel;
 
 class Admin extends BaseController
 {
@@ -35,7 +36,7 @@ class Admin extends BaseController
         $editorModel = new EditorModel();
 
         $data['title'] = "Modul";
-        $data['modul'] = $modulModel->find();
+        $data['modul'] = $modulModel->join('kategori', 'modul.id_kategori = kategori.id_kategori')->find();
         $data['status'] = $editorModel->where([
             'email' => session()->get('email'),
         ])->findAll();
@@ -49,9 +50,11 @@ class Admin extends BaseController
         }
 
         $userModel = new UserModel();
+        $kategoriModel = new KategoriModel();
 
         $data['title'] = "Tambah Modul";
         $data['admin'] = $userModel->where(['email !=' => session()->get('email'),'role' => 'admin'])->findAll();
+        $data['kategori'] = $kategoriModel->findAll();
 
         return view('admin/add_modul', $data);
     }
@@ -171,7 +174,7 @@ class Admin extends BaseController
             $modulModel->insert([
                 'judul_modul' => $this->request->getPost('judul'),
                 'level' => $this->request->getPost('level'),
-                'kategori' => $this->request->getPost('kategori'),
+                'id_kategori' => $this->request->getPost('kategori'),
                 'deskripsi' => $this->request->getPost('deskripsi'),
                 'email' => session()->get('email'),
                 'cover' => $newCoverName
@@ -289,6 +292,7 @@ class Admin extends BaseController
         $subModulModel = new subModulModel();
         $materiModel = new MateriModel();
         $editorModel = new EditorModel();
+        $kategoriModel = new KategoriModel();
 
         $data['id'] = $id;
         $data['title'] = "Edit Data";
@@ -300,6 +304,7 @@ class Admin extends BaseController
         $data['subModul'] = $subModulModel->where(['id_modul' => $id])->findAll();
         $data['materi'] = $materiModel->join('sub_modul', 'sub_modul.id_sub_modul = materi.id_sub_modul')->where(['id_modul' => $id])->findAll();
         $data['editor'] = $editorModel->where(['id_modul' => $id])->findAll();
+        $data['kategori'] = $kategoriModel->findAll();
 
         return view('admin/edit_modul', $data);
     }
@@ -414,7 +419,7 @@ class Admin extends BaseController
             $modulModel->update($id, [
                 'judul_modul' => $this->request->getPost('judul'),
                 'level' => $this->request->getPost('level'),
-                'kategori' => $this->request->getPost('kategori'),
+                'id_kategori' => $this->request->getPost('kategori'),
                 'deskripsi' => $this->request->getPost('deskripsi'),
                 'email' => session()->get('email'),
                 'cover' => $namaSampul
@@ -836,10 +841,87 @@ class Admin extends BaseController
             return redirect()->route('admin/login');
         }
 
-        $testimoniModel = new TestimoniModel();
+        $kategoriModel = new KategoriModel();
 
         $data['title'] = "Kategori";
-        $data['testimoni'] = $testimoniModel->findAll();
+        $data['kategori'] = $kategoriModel->where('id_kategori !=', 1)->findAll();
         return view('admin/list_kategori', $data);
+    }
+
+    public function addkategori(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $data['title'] = "Tambah Kategori";
+        return view('admin/add_kategori', $data);
+    }
+
+    public function insertkategori(){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $kategoriModel = new KategoriModel();
+        
+        $result = $kategoriModel->insert([
+            'nama_kategori' => $this->request->getPost('nama_kategori')
+        ]);
+
+        if($result !== false){
+            return redirect()->route('admin/kategori')->with('info', 'Berhasil ditambahkan');
+        }else{
+            return redirect()->back()->with('errors', $kategoriModel->errors());
+        }
+
+        return view('admin/add_kategori');
+    }
+
+    public function deletekategori($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $modulModel = new ModulModel();
+        $kategoriModel = new KategoriModel();
+
+        $modulModel->where('kategori', $id)->set(['kategori'=> 1])->update();
+        $result = $kategoriModel->delete($id);
+
+        if($result !== false){
+            return redirect()->route('admin/kategori')->with('info', 'Berhasil dihapus');
+        }else{
+            return redirect()->route('admin/kategori')->with('info', 'Gagal dihapus');
+        }
+    }
+
+    public function editkategori($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $kategoriModel = new KategoriModel();
+        $data['kategori'] = $kategoriModel->find($id);
+        $data['title'] = "Update Kategori";
+
+        return view('admin/edit_kategori', $data);
+    }
+
+    public function updatekategori($id){
+        if (session()->get('role') !== 'admin') { // jika bukan admin
+            return redirect()->route('admin/login');
+        }
+
+        $kategoriModel = new KategoriModel();
+
+        $result = $kategoriModel->update($id, [
+            'nama_kategori' => $this->request->getPost('nama_kategori')
+        ]);
+
+        if($result !== false){            
+            return redirect()->route('admin/kategori')->with('info', 'Berhasil diupdate');
+        }else{
+            return redirect()->back()->with('errors', $kategoriModel->errors());
+        }
     }
 }

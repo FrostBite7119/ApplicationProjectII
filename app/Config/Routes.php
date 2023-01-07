@@ -86,7 +86,11 @@ $routes->post('/admin/pembayaran/updatePembayaran/(:any)/(:any)', 'Admin::update
 
 // routes admin kategori
 $routes->get('/admin/kategori', 'Admin::kategori');
-
+$routes->get('/admin/kategori/addkategori', 'Admin::addkategori');
+$routes->post('/admin/kategori/insertkategori', 'Admin::insertkategori');
+$routes->post('/admin/kategori/delete/(:any)', 'Admin::deletekategori/$1');
+$routes->get('/admin/kategori/editkategori/(:any)', 'Admin::editkategori/$1');
+$routes->post('/admin/kategori/updatekategori/(:any)', 'Admin::updatekategori/$1');
 
 // routes admin user
 $routes->get('/admin/user', 'Admin::user');

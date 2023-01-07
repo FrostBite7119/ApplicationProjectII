@@ -26,7 +26,7 @@
             <?php endif; ?>
             <div class="row justify-content-end">
                 <div class="col-4 d-flex flex-row-reverse" style="margin-right: 15px; margin-bottom: 10px">
-                    <a href="/admin/testimoni/addtestimoni" type="button" class="btn btn-primary">Tambah Kategori</a>
+                    <a href="/admin/kategori/addkategori" type="button" class="btn btn-primary">Tambah Kategori</a>
                 </div>
                 <div class="col-12">
                     <div class="card">
@@ -35,23 +35,19 @@
                             <table id="example1" class="table table-bordered table-striped">
                             <thead>
                             <tr>
-                                <th>Profile</th>
-                                <th>Deskripsi</th>
-                                <th>Nama Testimoni</th>
-                                <th>Bidang</th>
+                                <th>ID Kategori</th>
+                                <th>Nama Kategori</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach($testimoni as $data) : ?>
+                            <?php foreach($kategori as $dataKategori) : ?>
                               <tr>
-                                <td style="text-align: center"><img src="/profile_testi/<?= $data['profile']; ?>" alt="" width="150"></td>
-                                <td><?= $data['deskripsi']; ?></td>
-                                <td><?= $data['nama']; ?></td>
-                                <td><?= $data['bidang']; ?></td>
+                                <td><?= $dataKategori['id_kategori']; ?></td>
+                                <td><?= $dataKategori['nama_kategori']; ?></td>
                                 <td>
-                                  <a href="/admin/testimoni/edittestimoni/<?= $data['id_testimoni']; ?>" class="btn btn-sm btn-warning" style="margin-right: 10px">Edit</a>
-                                  <form action="/admin/testimoni/delete/<?= $data['id_testimoni']; ?>" method="post" style="display: inline">
+                                  <a href="/admin/kategori/editkategori/<?= $dataKategori['id_kategori']; ?>" class="btn btn-sm btn-warning" style="margin-right: 10px">Edit</a>
+                                  <form action="/admin/kategori/delete/<?= $dataKategori['id_kategori']; ?>" method="post" style="display: inline">
                                     <button type="submit" class="btn btn-sm btn-danger " onclick="return confirm('Apakah Anda yakin?')">Hapus</button>
                                   </form>
                                 </td>
@@ -60,10 +56,8 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th>Profile</th>
-                                <th>Deskripsi</th>
-                                <th>Nama Testimoni</th>
-                                <th>Bidang</th>
+                                <th>ID Kategori</th>
+                                <th>Nama Kategori</th>
                                 <th>Aksi</th>
                             </tr>
                             </tfoot>

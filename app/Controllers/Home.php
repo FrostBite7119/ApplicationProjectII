@@ -15,6 +15,7 @@ use App\Models\MateriModel;
 use App\Models\RatingModel;
 use App\Models\TestimoniModel;
 use App\Models\KursusSayaModel;
+use App\Models\KategoriModel;
 
 class Home extends BaseController
 {
@@ -24,7 +25,7 @@ class Home extends BaseController
         $modulModel = new ModulModel();
 
         // Cek Langganan
-        $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
+        $userModel->where('expired_date <', date('Y-m-d'))->set(['level'=> 1,'expired_date' => null])->update();
 
         $data['jumlahUser'] = $userModel->where('role!=', 'admin')->countAllResults();
         $data['jumlahModul'] = $modulModel->countAllResults();
@@ -39,14 +40,14 @@ class Home extends BaseController
         $builder = $modulModel;
 
         // $builder->select("m.*, AVG(rating.rating) as rata, COUNT(rating.rating) as total");
-        $builder->select("m.*, AVG(rating.rating) as rata");
+        $builder->select("m.*, kategori.nama_kategori, AVG(rating.rating) as rata");
         $builder->from('modul m');
+        $builder->join('kategori', 'm.id_kategori = kategori.id_kategori');
         $builder->join('rating', 'm.id_modul = rating.id_modul', 'left');
 
         $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy(['m.id_modul'])->paginate(15, 'modul');
         $data['pager'] = $modulModel->pager;
         $data['testimoni'] = $testimoniModel->findAll();
-    
 
         return view('user/home', $data);
     }
@@ -59,7 +60,7 @@ class Home extends BaseController
         $saranModel = new DisarankanModel();
         $kursusSayaModel = new KursusSayaModel();
 
-        $data['modul'] = $modulModel->find($id);
+        $data['modul'] = $modulModel->join('kategori', 'modul.id_kategori = kategori.id_kategori')->find($id);
         $data['totalSub'] = $subModel->where(['id_modul' => $id])->countAllResults();
         $data['target'] = $targetModel->where('id_modul', $id)->findAll();
         $data['syarat'] = $syaratModel->where('id_modul', $id)->findAll();
@@ -118,15 +119,18 @@ class Home extends BaseController
 
     public function search(){
         $modulModel = new ModulModel();
+        $kategoriModel = new KategoriModel();
+
+        $data['kategori'] = $kategoriModel->findAll();
 
         if($this->request->getGet('kategori') != null || $this->request->getGet('sort-by') || $this->request->getGet('level') != null){
             $builder = $modulModel;
                     
             // $builder->select("m.*, AVG(rating.rating) as rata, COUNT(rating.rating) as total")->from('modul m')->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
-            $builder->select("m.*, AVG(rating.rating) as rata")->from('modul m')->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
+            $builder->select("m.*, AVG(rating.rating) as rata, kategori.nama_kategori")->from('modul m')->join('kategori', 'm.id_kategori = kategori.id_kategori')->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
 
             if($this->request->getGet('kategori') !== ""){
-                $where = "m.kategori='".$this->request->getGet('kategori')."'";
+                $where = "kategori.id_kategori='".$this->request->getGet('kategori')."'";
                 $builder->where($where);
             }
 
@@ -156,9 +160,9 @@ class Home extends BaseController
             $builder = $modulModel;
 
             // $builder->select("m.*, AVG(rating.rating) as rata, COUNT(rating.rating) as total");
-            $builder->select("m.*, AVG(rating.rating) as rata");
+            $builder->select("m.*, AVG(rating.rating) as rata, kategori.nama_kategori");
             $builder->from('modul m');
-            $builder->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
+            $builder->join('kategori', 'm.id_kategori = kategori.id_kategori')->join('rating', 'm.id_modul = rating.id_modul', 'left')->like('m.judul_modul', $this->request->getGet('cari'), 'both');
 
             $data['modul'] = $builder->where('m.deleted_at IS NULL')->groupBy('m.id_modul')->paginate(12, 'modul');
         }
@@ -416,7 +420,7 @@ class Home extends BaseController
 
         $kursusSayaModel = new KursusSayaModel();
 
-        $data['kursus'] = $kursusSayaModel->join('modul', 'kursus_saya.id_modul = modul.id_modul')->where('kursus_saya.email', session()->get('email'))->paginate(9, 'modul');
+        $data['kursus'] = $kursusSayaModel->join('modul', 'kursus_saya.id_modul = modul.id_modul')->join('kategori', 'modul.id_kategori = kategori.id_kategori')->where('kursus_saya.email', session()->get('email'))->paginate(9, 'modul');
         $data['pager'] = $kursusSayaModel->pager;
 
         return view('user/kursus_saya', $data);
@@ -430,6 +434,7 @@ class Home extends BaseController
         $userModel = new UserModel();
         $historyPembelianModel = new HistoryPembelianModel();
         $ratingModel = new RatingModel();
+        $kursusSayaModel = new KursusSayaModel();
 
         $nama = $this->request->getPost('nama');
         $email = $this->request->getPost('email');
@@ -460,6 +465,7 @@ class Home extends BaseController
 
         $historyPembelianModel->where('email', session()->get('email'))->set(['email'=> $email])->update();
         $ratingModel->where('email', session()->get('email'))->set(['email'=> $email])->update();
+        $kursusSayaModel->where('email', session()->get('email'))->set(['email'=> $email])->update();
 
         $result = $userModel->update(session()->get('email'), [
             'nama' => $nama,
