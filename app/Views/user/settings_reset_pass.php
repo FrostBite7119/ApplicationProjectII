@@ -16,12 +16,10 @@
                         </ul>
                     </div>
                     <!-- Dashboard Tabs End -->
-                    <?php if (session()->has('errors')) : ?>
-                    <ul>
-                    <?php foreach (session('errors') as $error) : ?>
-                        <li><?= $error; ?></li>
-                    <?php endforeach; ?>
-                    </ul>
+                    <?php if (session()->getFlashdata('info')) : ?>
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <?php echo session()->getFlashdata('info'); ?>
+                        </div>
                     <?php endif; ?>
                     <form action="/change_pass" method="post">
                         <div class="row">

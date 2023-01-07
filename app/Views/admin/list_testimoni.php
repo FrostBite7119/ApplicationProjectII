@@ -50,7 +50,7 @@
                                 <td><?= $data['nama']; ?></td>
                                 <td><?= $data['bidang']; ?></td>
                                 <td>
-                                  <a href="/admin/testimoni/edittestimoni/<?= $data['id_testimoni']; ?>" class="btn btn-sm btn-warning" style="margin-right: 10px">Edit</a>
+                                  <a href="/admin/testimoni/edittestimoni/<?= $data['id_testimoni']; ?>" class="btn btn-sm btn-warning" style="margin-right: 8px;margin-bottom: 8px;">Edit</a>
                                   <form action="/admin/testimoni/delete/<?= $data['id_testimoni']; ?>" method="post" style="display: inline">
                                     <button type="submit" class="btn btn-sm btn-danger " onclick="return confirm('Apakah Anda yakin?')">Hapus</button>
                                   </form>
