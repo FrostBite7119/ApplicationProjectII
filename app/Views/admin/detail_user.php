@@ -24,7 +24,7 @@
                     <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                             <div class="text-center">
-                                <img class="profile-user-img img-fluid img-circle" src="/user_profile/<?= $user['profile'] ?>" alt="User profile picture" >
+                                <img class="profile-user-img img-fluid img-circle" src="/user_profile/<?= $user['profile'] ?>" alt="User profile picture" style="height: 100px !important;" >
                             </div>
 
                             <h3 class="profile-username text-center"><?= $user['nama']; ?></h3>

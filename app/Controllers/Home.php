@@ -22,7 +22,7 @@ class Home extends BaseController
     {
         $userModel = new UserModel();
         $modulModel = new ModulModel();
-
+        $historyPembelianModel = new HistoryPembelianModel();
         // Cek Langganan
         $userModel->where('expired_date <=', date('Y-m-d'))->set(['level'=> 0,'expired_date' => null])->update();
 
@@ -400,9 +400,9 @@ class Home extends BaseController
 
                 if($result !== false){            
 
-                    return redirect()->to('user/settings_reset_pass')->with('info', 'Berhasil mengupdate data');
+                    return redirect()->back()->with('info', 'Berhasil mengupdate data');
                 }else{
-                    return redirect()->to('user/settings_reset_pass')->with('info', 'Gagal mengupdate data');
+                    return redirect()->back()->with('info', 'Gagal mengupdate data');
                 }
                 
             }
