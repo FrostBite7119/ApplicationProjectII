@@ -27,8 +27,8 @@
 
                                 <!-- Slider Search Start -->
                                 <div class="slider-search">
-                                    <form action="#">
-                                        <input class="slider-search__field" placeholder="Apa yang ingin Anda pelajari?">
+                                    <form action="/search" method="get">
+                                        <input class="slider-search__field" placeholder="Apa yang ingin Anda pelajari?" name="cari">
                                         <button type="submit" class="slider-search__submit">
                                             <i class="search-btn-icon fas fa-search"></i>
                                         </button>
@@ -167,7 +167,7 @@
                                 </svg>
                             </div>
                             <div class="features-item__caption">
-                                <h3 class="features-item__title">Ahli Di Berbagai Bidang</h3>
+                                <h3 class="features-item__title">Ahli di Bidang Teknologi</h3>
                             </div>
                         </div>
                         <!-- Features Item End -->
@@ -256,7 +256,7 @@
                             <!-- Section Title Start -->
                             <div class="section-title" data-aos="fade-up" data-aos-duration="1000">
                                 <h2 class="section-title__title">Testimonial <br> Seseorang <mark>Kepada Kami</mark></h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum esti</p>
+                                <p>Berikut merupakan pengalaman mereka yang sudah menggunakan Edumall sebagai refrensi belajar mereka.</p>
                             </div>
                             <!-- Section Title End -->
                         </div>
@@ -326,7 +326,7 @@
                             <h3 class="call-to-action__main-title">Temukan Modul yang Tepat</h3>
                         </div>
                         <div class="call-to-action__btn">
-                            <a href="course-category.html" class="btn btn-secondary btn-hover-primary">Mulai</a>
+                            <a href="/membership" class="btn btn-secondary btn-hover-primary">Mulai</a>
                         </div>
 
                     </div>
