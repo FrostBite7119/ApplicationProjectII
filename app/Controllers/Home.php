@@ -339,6 +339,60 @@ class Home extends BaseController
         return view('user/settings_reset_pass', $data);
     }
 
+    public function change_pass(){
+        if (session()->get('role') !== 'user') { // jika bukan admin
+            return redirect()->route('/');
+        }
+
+        $userModel = new UserModel();
+        $email = session()->get('email');
+        $dataUser = $userModel->find($email);
+        if (!$this->validate([
+            'opwd' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Password lama harus diisi',
+                ]
+            ],
+
+            'npwd' => [
+                'rules' => 'required|min_length[4]',
+                'errors' => [
+                    'required' => 'Password Harus diisi',
+                    'min_length' => 'Password Minimal 4 Karakter',
+                    'max_length' => 'Password Maksimal 50 Karakter',
+                ]
+            ],
+            'cnpwd' => [
+                'rules' => 'matches[npwd]',
+                'errors' => [
+                    'matches' => 'Konfirmasi Password tidak sesuai dengan password',
+                ]
+            ],
+        ])) {
+            session()->setFlashdata('error', $this->validator->listErrors());
+            return redirect()->back()->withInput()->with('errors', $userModel->errors());
+        }
+        
+        if($dataUser){
+            $password = $this->request->getPost('opwd');
+            if(password_verify($password, $dataUser['password'])){
+                $result = $userModel->update(session()->get('email'), [
+                    'password' => password_hash($this->request->getPost('npwd'), PASSWORD_BCRYPT),
+
+                ]);
+
+                if($result !== false){            
+
+                    return redirect()->to('user/settings_reset_pass')->with('info', 'Berhasil mengupdate data');
+                }else{
+                    return redirect()->to('user/settings_reset_pass')->with('info', 'Gagal mengupdate data');
+                }
+                
+            }
+        }
+    }
+
     public function kursus_saya(){
         if (session()->get('role') !== 'user') { // jika bukan admin
             return redirect()->route('/');

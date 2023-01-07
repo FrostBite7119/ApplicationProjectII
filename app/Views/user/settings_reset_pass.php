@@ -16,8 +16,14 @@
                         </ul>
                     </div>
                     <!-- Dashboard Tabs End -->
-
-                    <form action="#">
+                    <?php if (session()->has('errors')) : ?>
+                    <ul>
+                    <?php foreach (session('errors') as $error) : ?>
+                        <li><?= $error; ?></li>
+                    <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
+                    <form action="/change_pass" method="post">
                         <div class="row">
                             <div class="col-lg-6">
 
@@ -31,7 +37,7 @@
                                             <!-- Account Account details Start -->
                                             <div class="dashboard-content__input">
                                                 <label class="form-label-02">Current Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="opwd" value="<?= old('opwd');?>">
                                             </div>
                                             <!-- Account Account details End -->
                                         </div>
@@ -39,7 +45,7 @@
                                             <!-- Account Account details Start -->
                                             <div class="dashboard-content__input">
                                                 <label class="form-label-02">New Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="npwd">
                                             </div>
                                             <!-- Account Account details End -->
                                         </div>
@@ -47,7 +53,7 @@
                                             <!-- Account Account details Start -->
                                             <div class="dashboard-content__input">
                                                 <label class="form-label-02">Confirm New Password</label>
-                                                <input type="password" class="form-control">
+                                                <input type="password" class="form-control" name="cnpwd">
                                             </div>
                                             <!-- Account Account details End -->
                                         </div>
@@ -60,7 +66,7 @@
                         </div>
 
                         <div class="dashboard-settings__btn">
-                            <button class="btn btn-primary btn-hover-secondary">Reset Password</button>
+                            <button type="submit" name="update" class="btn btn-primary btn-hover-secondary">Reset Password</button>
                         </div>
                     </form>
 
