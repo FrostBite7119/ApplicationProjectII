@@ -91,6 +91,7 @@ $routes->get('/admin/user/detailuser/(:any)', 'Admin::detailuser/$1');
 //routes user
 $routes->post('/register', 'Register::process');
 $routes->post('/login', 'Login::process');
+$routes->post('/change_pass', 'Home::change_pass');
 $routes->get('/login/logoutUser', 'Login::logoutUser');
 $routes->get('/profile', 'Home::profile');
 $routes->get('/riwayat_langganan', 'Home::riwayatlangganan');

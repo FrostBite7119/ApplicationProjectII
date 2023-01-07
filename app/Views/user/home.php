@@ -259,10 +259,6 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur cing elit. Suspe ndisse suscipit sagittis leo sit met condimentum esti</p>
                             </div>
                             <!-- Section Title End -->
-
-                            <div class="section-btn" data-aos="fade-up" data-aos-duration="1000">
-                                <a href="#" class="btn  btn-light btn-hover-primary">View all</a>
-                            </div>
                         </div>
 
                     </div>
