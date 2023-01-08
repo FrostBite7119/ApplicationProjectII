@@ -125,7 +125,7 @@
                                 <td><?= $data['email']; ?></td>
                                 <td><?= $data['tanggal_pembelian']; ?></td>
                                 <td><?= $data['tanggal_berlaku']; ?></td>
-                                <td><?= $data['bukti_pembayaran']; ?></td>
+                                <td style="text-align: center"><img src="/bukti_pembayaran/<?= $data['bukti_pembayaran']; ?>" alt="" width="150"></td>
                                 <td><?= $data['status']; ?></td>
                                 <td>
                                   <form action="/admin/pembayaran/detailpembayaran/<?= $data['id_history'] ?>" method="get" style="display: inline">
