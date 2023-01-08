@@ -510,4 +510,19 @@ class Home extends BaseController
             return redirect()->back()->with('informasi', 'Login terlebih dahulu untuk menambahkan!');
         }
     }
+
+    public function hapuskursussaya($id){
+        if (session()->get('role') !== 'user') { // jika bukan admin
+            return redirect()->route('/');
+        }
+
+        $kursusSayaModel = new KursusSayaModel();
+        $result = $kursusSayaModel->delete($id);
+
+        if($result !== false){
+            return redirect()->back()->with('informasi', 'Berhasil dihapus');
+        }else{
+            return redirect()->back()->with('informasi', 'Gagal dihapus');
+        }
+    }
 }

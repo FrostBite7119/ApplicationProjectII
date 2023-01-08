@@ -30,7 +30,9 @@
                         <?php endif; ?>
                         <h3 class="course-info-02__title"><a href="/course_detail/<?= $dataKursus['id_modul']; ?>"><?= $dataKursus['judul_modul'] ?></a></h3>
                         <span class="badge rounded-pill bg-success"><?= $dataKursus['nama_kategori'] ?></span>  
-                        <i class="fas fa-trash icon-trash"></i>                      
+                        <form action="/hapuskursussaya/<?= $dataKursus['id_kursus_saya'] ?>" method="post" style="display: inline;">
+                            <button id="buttonTrash"><i class="fas fa-trash icon-trash"></i></button>
+                        </form>
                     </div>
                 </div>
                 <!-- Course End -->

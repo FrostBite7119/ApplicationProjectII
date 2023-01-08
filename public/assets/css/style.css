@@ -20542,10 +20542,19 @@ ul li ul:hover {
 
 .icon-trash{
   font-size: 20px;
-  margin-left: 185px;
+  margin-left: 230px;
   color: #dc3545;
 }
 
-.icon-trash:hover{
+/* .icon-trash:hover{
   cursor: pointer;
+} */
+
+#buttonTrash{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	outline: inherit;
 }
