@@ -29,7 +29,8 @@
                             <span class="course-info__badge-text badge-hard">Sulit</span>
                         <?php endif; ?>
                         <h3 class="course-info-02__title"><a href="/course_detail/<?= $dataKursus['id_modul']; ?>"><?= $dataKursus['judul_modul'] ?></a></h3>
-                        <span class="badge rounded-pill bg-success"><?= $dataKursus['nama_kategori'] ?></span>                        
+                        <span class="badge rounded-pill bg-success"><?= $dataKursus['nama_kategori'] ?></span>  
+                        <i class="fas fa-trash icon-trash"></i>                      
                     </div>
                 </div>
                 <!-- Course End -->

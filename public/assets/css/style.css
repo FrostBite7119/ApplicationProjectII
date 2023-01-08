@@ -20545,3 +20545,7 @@ ul li ul:hover {
   margin-left: 185px;
   color: #dc3545;
 }
+
+.icon-trash:hover{
+  cursor: pointer;
+}
