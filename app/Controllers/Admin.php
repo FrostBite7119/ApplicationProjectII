@@ -787,7 +787,7 @@ class Admin extends BaseController
                 $pertambahanHari = $data['lama'] * 1;
             }else if($data['rentang'] == "Bulan"){
                 $pertambahanHari = $data['lama'] * 30;
-            }else if($data['rentang'] == "Tahub"){
+            }else if($data['rentang'] == "Tahun"){
                 $pertambahanHari = $data['lama'] * 365;
             }
 

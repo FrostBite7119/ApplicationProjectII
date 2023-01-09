@@ -332,7 +332,7 @@ class Home extends BaseController
         $data['user'] = $userModel->find(session()->get('email'));
         // $data['pembelian'] = $historyPembelianModel->select("h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total")->from("history_pembelian h")->join('langganan', 'h.id_langganan = langganan.id_langganan')->join('detail_transaksi', 'h.id_history = detail_transaksi.id_history', 'left')->where("h.email = '".session()->get('email')."'")->groupBy(['detail_transaksi.id_history'])->find();
         $db = db_connect();
-        $data['pembelian'] = $db->query("SELECT h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total FROM history_pembelian h LEFT JOIN langganan ON h.id_langganan = langganan.id_langganan LEFT JOIN detail_transaksi ON h.id_history = detail_transaksi.id_history WHERE h.email = 'handy2407@gmail.com' GROUP BY detail_transaksi.id_history")->getResultArray();
+        $data['pembelian'] = $db->query("SELECT h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total FROM history_pembelian h LEFT JOIN langganan ON h.id_langganan = langganan.id_langganan LEFT JOIN detail_transaksi ON h.id_history = detail_transaksi.id_history WHERE h.email = '".session()->get('email')."' GROUP BY detail_transaksi.id_history")->getResultArray();
 
         return view('user/riwayat_langganan', $data);
     }
