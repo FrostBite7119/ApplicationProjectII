@@ -18607,6 +18607,7 @@ span.flatpickr-weekday {
 
 .dashboard-content {
   padding-top: 44px;
+  min-height: 68vh;
 }
 .dashboard-content__input {
   position: relative;
