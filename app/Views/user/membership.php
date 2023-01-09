@@ -59,7 +59,7 @@
                                             <?php endif; ?>
                                                 <span class="pricing-plan__price"><?= number_format($dataLangganan['biaya_langganan']) ?></span>
                                             <?php if($dataLangganan['waktu_diskon'] != null) : ?>
-                                                <?php if(date('d-m-Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d-m-Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?></s><?php endif;?>
+                                                <?php if(date('d/m/Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d-m-Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?></s><?php endif;?>
                                             <?php endif; ?>
                                             <?php if($dataLangganan['waktu_diskon'] != null) : ?>
                                                 <?php if(date('d/m/Y') >= explode(' - ', $dataLangganan['waktu_diskon'])[0] && date('d/m/Y') <= explode(' - ', $dataLangganan['waktu_diskon'])[1]): ?>
