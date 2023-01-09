@@ -330,7 +330,9 @@ class Home extends BaseController
         $historyPembelianModel = new HistoryPembelianModel();
 
         $data['user'] = $userModel->find(session()->get('email'));
-        $data['pembelian'] = $historyPembelianModel->select("h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total")->from("history_pembelian h")->join('langganan', 'h.id_langganan = langganan.id_langganan')->join('detail_transaksi', 'h.id_history = detail_transaksi.id_history', 'left')->where("h.email = '".session()->get('email')."'")->groupBy(['detail_transaksi.id_history'])->findAll();
+        // $data['pembelian'] = $historyPembelianModel->select("h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total")->from("history_pembelian h")->join('langganan', 'h.id_langganan = langganan.id_langganan')->join('detail_transaksi', 'h.id_history = detail_transaksi.id_history', 'left')->where("h.email = '".session()->get('email')."'")->groupBy(['detail_transaksi.id_history'])->find();
+        $db = db_connect();
+        $data['pembelian'] = $db->query("SELECT h.*, langganan.*, SUM(detail_transaksi.jumlah_transaksi) as total FROM history_pembelian h LEFT JOIN langganan ON h.id_langganan = langganan.id_langganan LEFT JOIN detail_transaksi ON h.id_history = detail_transaksi.id_history WHERE h.email = 'handy2407@gmail.com' GROUP BY detail_transaksi.id_history")->getResultArray();
 
         return view('user/riwayat_langganan', $data);
     }
@@ -502,12 +504,12 @@ class Home extends BaseController
             ]);
 
             if($result !== false){
-                return redirect()->back()->with('informasi', 'Berhasil ditambahkan');
+                return redirect()->to('course_detail/'.$idModul)->with('informasi', 'Berhasil ditambahkan');
             }else{
-                return redirect()->back()->with('informasi', 'Gagal ditambahkan');
+                return redirect()->to('course_detail/'.$idModul)->with('informasi', 'Gagal ditambahkan');
             }
         }else{
-            return redirect()->back()->with('informasi', 'Login terlebih dahulu untuk menambahkan!');
+            return redirect()->to('course_detail/'.$idModul)->with('informasi', 'Login terlebih dahulu untuk menambahkan!');
         }
     }
 

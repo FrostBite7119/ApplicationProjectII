@@ -45,7 +45,8 @@
                                 <td class="earned">
                                     <div class="dashboard-table__mobile-heading">Total</div>
                                     <div class="dashboard-table__text">
-                                        <span class="sale-price">Rp<?= $dataPembelian['total']; ?></span>
+                                        <?php if($dataPembelian['total'] < 0){$total = 0;}else{$total = $dataPembelian['total'];} ?>
+                                        <span class="sale-price">Rp<?= $total; ?></span>
                                     </div>
                                 </td>
                             </tr>
