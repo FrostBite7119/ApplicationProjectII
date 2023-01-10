@@ -411,6 +411,8 @@ class Home extends BaseController
                     return redirect()->back()->with('info', 'Gagal mengupdate data');
                 }
                 
+            }else{
+                return redirect()->back()->with('info', 'Password yang Anda inputkan salah');
             }
         }
     }
