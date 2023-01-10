@@ -369,6 +369,7 @@ class Home extends BaseController
         $userModel = new UserModel();
         $email = session()->get('email');
         $dataUser = $userModel->find($email);
+
         if (!$this->validate([
             'opwd' => [
                 'rules' => 'required',
@@ -392,8 +393,8 @@ class Home extends BaseController
                 ]
             ],
         ])) {
-            session()->setFlashdata('error', $this->validator->listErrors());
-            return redirect()->back()->withInput()->with('errors', $userModel->errors());
+            session()->setFlashdata('errors', $this->validator->listErrors());
+            return redirect()->back()->withInput();
         }
         
         if($dataUser){

@@ -29,7 +29,9 @@
                                 <div class="dashboard-content-box dashboard-settings__info">
 
                                     <h4 class="dashboard-settings__title">Reset Password</h4>
-
+                                    <?php if (!empty(session()->getFlashdata('errors'))) : ?>
+                                        <?php echo session()->getFlashdata('errors'); ?>
+                                    <?php endif; ?>
                                     <div class="row gy-4">
                                         <div class="col-md-12">
                                             <!-- Account Account details Start -->
