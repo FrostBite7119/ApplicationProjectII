@@ -64,6 +64,20 @@
                             </div>
                         </div>
                         <hr>
+                        <h4 class="checkout-order__title">Informasi Pembayaran</h4>
+                        <h6 style="margin-bottom: 10px;">Kirim Uang Kesini</h6>
+                        <div class="d-flex justify-content-between">
+                            <div>  
+                                <div class="text-green-500 mb-3">Bank BRI</div>
+                                <div class="text-green-500 mb-3">Atas Nama</div>
+                            </div>
+
+                            <div class="text-lg text-gray-600 text-right">
+                                <div class="text-green-500 mb-2" style="text-align: right;">005 101 1921 58502</div>
+                                <div class="text-green-500 mb-2">ERSANDI MUKHIBILLAH</div>
+                            </div>
+                        </div>
+                        <hr>
                         <?php if(session()->get('role') == 'user') : ?>
                             <?php if(!$isPending) : ?>
                                 <?php if($user['expired_date'] == null): ?>
