@@ -267,6 +267,7 @@ class Home extends BaseController
         $ratingModel = new RatingModel();
 
         $data['materi'] = $materiModel->find($id);
+        $data['idMateri'] = $id;
         $ambilId = $materiModel->join('sub_modul', 'materi.id_sub_modul = sub_modul.id_sub_modul')->join('modul', 'sub_modul.id_modul = modul.id_modul')->find($id);
         $idModul = $ambilId['id_modul'];
         $data['subModul']  = $subModel->where('id_modul', $idModul)->findAll();
@@ -291,7 +292,7 @@ class Home extends BaseController
         }
     }
 
-    public function rating($rating, $idModul){
+    public function rating($rating, $idModul, $idMateri){
         if(session()->get('role') == "user"){
             $ratingModel = new RatingModel();
             $data = $ratingModel->where(['id_modul' => $idModul, 'email'=> session()->get('email')])->find();
@@ -304,9 +305,9 @@ class Home extends BaseController
             }else{
                 $ratingModel->where(['id_modul' => $idModul, 'email'=> session()->get('email')])->set(['rating'=> $rating])->update();
             }
-            return redirect()->back();
+            return redirect()->to('course_materi_detail/'.$idMateri);
         }else{
-            return redirect()->back()->with('informasi', 'Login untuk memberikkan rating');
+            return redirect()->to('course_materi_detail/'.$idMateri)->with('informasi', 'Login untuk memberikkan rating');
         }
     }
 

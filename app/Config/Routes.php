@@ -47,7 +47,7 @@ $routes->get('/membership', 'Home::membership');
 $routes->get('/langganan_pembayaran/(:any)', 'Home::pembayaranlangganan/$1');
 $routes->post('/bayar_langganan/(:any)/(:any)', 'Home::bayar/$1/$2');
 $routes->get('/course_materi_detail/(:any)', 'Home::detailMateri/$1');
-$routes->get('/rating/(:any)/(:any)', 'Home::rating/$1/$2');
+$routes->get('/rating/(:any)/(:any)/(:any)', 'Home::rating/$1/$2/$3');
 
 // routes admin
 $routes->get('/admin/login', 'Login::index');

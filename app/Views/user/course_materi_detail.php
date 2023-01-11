@@ -70,11 +70,11 @@
                                             <div class="comment-form__rating">
                                                 <label class="label">Rating Anda: *</label>
                                                 <ul id="rating" class="rating">
-                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 1){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/1/'.$id_modul); ?>'"></i></li>
-                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 2){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/2/'.$id_modul); ?>'"></i></li>
-                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 3){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/3/'.$id_modul); ?>'"></i></li>
-                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 4){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/4/'.$id_modul); ?>'"></i></li>
-                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 5){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/5/'.$id_modul); ?>'"></i></li>
+                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 1){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/1/'.$id_modul.'/'.$idMateri); ?>'"></i></li>
+                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 2){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/2/'.$id_modul.'/'.$idMateri); ?>'"></i></li>
+                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 3){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/3/'.$id_modul.'/'.$idMateri); ?>'"></i></li>
+                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 4){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/4/'.$id_modul.'/'.$idMateri); ?>'"></i></li>
+                                                    <li><i class="far fa-star <?php if($rating){if($rating[0]['rating'] >= 5){ echo "hover";}} ?>" onclick="window.location.href ='<?= base_url('rating/5/'.$id_modul.'/'.$idMateri); ?>'"></i></li>
                                                 </ul>
                                             </div>
                                         </form>
