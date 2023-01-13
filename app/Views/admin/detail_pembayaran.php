@@ -81,8 +81,8 @@
                                     <div>
                                         <div class="filter-container p-0 row">
                                             <div class="filtr-item col-sm-2" data-category="1" data-sort="white sample">
-                                                <a target="_blank" rel="noopener noreferrer" href="/assets/images/dark-logo.png" data-toggle="lightbox" data-title="sample 1 - white">
-                                                    <img src="/assets/images/dark-logo.png"  alt="white sample" height="50">
+                                                <a target="_blank" rel="noopener noreferrer" href="/bukti_pembayaran/<?= $pembayaran['bukti_pembayaran'] ?>" data-toggle="lightbox" data-title="sample 1 - white">
+                                                    <img src="/bukti_pembayaran/<?= $pembayaran['bukti_pembayaran'] ?>"  alt="white sample" height="50">
                                                 </a>
                                             </div>
                                         </div>

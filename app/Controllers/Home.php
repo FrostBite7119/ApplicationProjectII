@@ -235,7 +235,7 @@ class Home extends BaseController
                 $this->detailtransaksi($historyPembelianModel->insertID(), $this->request->getPost('potongan'), $this->request->getPost('biayaLangganan'));
                 return redirect()->to('/main')->with('informasi', 'Pembayaran Ditinjau');
             }else{
-                return redirect()->back()->with('errors', $historyPembelianModel->errors());
+                return redirect()->to('langganan_pembayaran/'.$id_langganan)->with('errors', $historyPembelianModel->errors());
             }
         }
     }
@@ -281,13 +281,13 @@ class Home extends BaseController
             if(session()->get('role') == "user"){
                 return view('user/course_materi_detail', $data);
             }else{
-                return redirect()->back()->with('informasi', 'Hanya tersedia untuk pengguna yang sudah mendaftar');
+                return redirect()->to('course_detail/'.$idModul)->with('informasi', 'Hanya tersedia untuk pengguna yang sudah mendaftar');
             }
         }else if($data['materi']['level'] == 2){
             if(session()->get('level') == 2){
                 return view('user/course_materi_detail', $data);
             }else{
-                return redirect()->back()->with('informasi', 'Hanya tersedia untuk pengguna yang sudah berlangganan');
+                return redirect()->to('course_detail/'.$idModul)->with('informasi', 'Hanya tersedia untuk pengguna yang sudah berlangganan');
             }
         }
     }

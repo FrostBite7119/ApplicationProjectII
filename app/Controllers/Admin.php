@@ -638,7 +638,7 @@ class Admin extends BaseController
             $profileTesti->move('profile_testi', $newProfileTesti);
             return redirect()->to('admin/testimoni')->with('info', 'Berhasil mengupdate data');
         }else{
-            return redirect()->back()->withInput()->with('errors', $testimoniModel->errors());
+            return redirect()->to('admin/testimoni/edittestimoni/'.$id)->withInput()->with('errors', $testimoniModel->errors());
         }
     }
 
@@ -745,7 +745,7 @@ class Admin extends BaseController
         if($result !== false){
             return redirect()->to('admin/langganan')->with('info', 'Berhasil mengupdate data');
         }else{
-            return redirect()->back()->withInput()->with('errors', $langgananModel->errors());
+            return redirect()->to('/admin/langganan/editlangganan/'.$id)->withInput()->with('errors', $langgananModel->errors());
         }
     }
 
@@ -802,9 +802,9 @@ class Admin extends BaseController
             ]);
 
             if($result !== false){
-                return redirect()->back()->with('info', 'Berhasil mengupdate status pembayaran');
+                return redirect()->to('/admin/pembayaran/detailpembayaran/'.$id)->with('info', 'Berhasil mengupdate status pembayaran');
             }else{
-                return redirect()->back()->with('error', 'Gagal mengupdate status pembayaran');
+                return redirect()->to('/admin/pembayaran/detailpembayaran/'.$id)->with('error', 'Gagal mengupdate status pembayaran');
             }
 
         }else if($status == 0){
@@ -813,9 +813,9 @@ class Admin extends BaseController
             ]);
 
             if($result !== false){
-                return redirect()->back()->with('info', 'Berhasil mengupdate status pembayaran');
+                return redirect()->to('/admin/pembayaran/detailpembayaran/'.$id)->with('info', 'Berhasil mengupdate status pembayaran');
             }else{
-                return redirect()->back()->with('error', 'Gagal mengupdate status pembayaran');
+                return redirect()->to('/admin/pembayaran/detailpembayaran/'.$id)->with('error', 'Gagal mengupdate status pembayaran');
             }
         }
     }
@@ -933,7 +933,7 @@ class Admin extends BaseController
         if($result !== false){            
             return redirect()->route('admin/kategori')->with('info', 'Berhasil diupdate');
         }else{
-            return redirect()->back()->with('errors', $kategoriModel->errors());
+            return redirect()->to('/admin/kategori/editkategori/'.$id)->with('errors', $kategoriModel->errors());
         }
     }
 }
